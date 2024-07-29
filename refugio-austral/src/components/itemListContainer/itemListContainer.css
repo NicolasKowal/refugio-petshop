@@ -1,0 +1,13 @@
+.grid-container {
+	margin: 0 auto;
+	width: 100%;
+	min-height: 485px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 80px;
+	row-gap: 50px;
+	background: #16161d;
+}

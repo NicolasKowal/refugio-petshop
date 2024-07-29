@@ -3,3 +3,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+.typeOfError {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background: black;
+}
+.typeOfError img {
+	width: 42%;
+}
