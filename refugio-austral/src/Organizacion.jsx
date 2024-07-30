@@ -9,9 +9,7 @@ import { Outlet } from "react-router-dom";
 function Organizacion() {
 	return (
 		<ShopListProvider>
-			<NavBar>
-				<Cart />
-			</NavBar>
+			<NavBar />
 			<Outlet />
 			<Footer />
 		</ShopListProvider>

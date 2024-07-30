@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Productos } from "../../Productos";
+import Cart from "../cart/Cart";
 
 function Navbar() {
 	let categorias = Productos.map((p) => p.categoria);
@@ -20,6 +21,7 @@ function Navbar() {
 					{categoria}
 				</Link>
 			))}
+			<Cart />
 		</div>
 	);
 }

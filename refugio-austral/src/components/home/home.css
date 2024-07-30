@@ -1,0 +1,21 @@
+.container-img {
+	margin: 0 auto;
+	height: 350px;
+	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	background: grey;
+}
+.container-img a img {
+	height: 250px;
+	width: 250px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	filter: opacity(100%);
+	transition: filter 0.3s ease;
+}
+
+.container-img img:hover {
+	scale: 1.1;
+}

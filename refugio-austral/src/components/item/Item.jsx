@@ -32,7 +32,6 @@ function Item({ id, nombre, precio, imagen, stock }) {
 					<h5 className="card-title">{nombre}</h5>
 					<p className="precio">${precio}</p>
 				</div>
-
 				<div className="divCompra">
 					<button
 						className="btn btn-dark"
