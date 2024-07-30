@@ -24,6 +24,11 @@ function App() {
 						element={<ProductDetail />}
 					/>
 					<Route path="producto/:id" element={<ProductDetail />} />
+					<Route path=":animal/producto/:id" element={<ProductDetail />} />
+					<Route
+						path="busqueda/:busqueda/producto/:id"
+						element={<ProductDetail />}
+					/>
 					<Route path="*" element={<NoPage />} />
 				</Route>
 			</Routes>
