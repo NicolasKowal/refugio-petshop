@@ -1,24 +1,42 @@
 import React from "react";
 import { Productos } from "../../Productos";
-import { useParams } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Item from "../item/Item";
+import { useParams } from "react-router-dom";
 
-function ItemList({ id, nombre, precio, imagen, stock }) {
+function ItemList() {
 	const { categoria } = useParams();
-	let productosFiltrados = [];
-	if (categoria != "Todos") {
-		productosFiltrados = Productos.filter(
-			(prod) => prod.categoria === categoria
+	const { animal } = useParams();
+	const { busqueda } = useParams();
+
+	let ProductosAMostrar = [];
+
+	if (!categoria && !animal) {
+		ProductosAMostrar = Productos.filter((producto) =>
+			producto.tags.includes(busqueda)
 		);
-	} else {
-		productosFiltrados = Productos;
+		if (ProductosAMostrar.length === 0) {
+			console.log(ProductosAMostrar);
+			return (
+				<div className="typeOfError">
+					<img src="https://http.dog/498.jpg" alt="not-found" />
+				</div>
+			);
+		} else if (!categoria && !busqueda) {
+			ProductosAMostrar = Productos.filter((producto) =>
+				producto.tags.includes(animal)
+			);
+		} else if (!animal && !busqueda) {
+			ProductosAMostrar = Productos.filter(
+				(producto) => producto.categoria === categoria
+			);
+		}
 	}
 	return (
 		<div className="grid-container">
-			{productosFiltrados.map((producto) => (
+			{ProductosAMostrar.map((producto) => (
 				<div key={producto.id}>
 					<Item
 						nombre={producto.nombre}

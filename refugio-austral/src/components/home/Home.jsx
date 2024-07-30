@@ -1,9 +1,21 @@
 import React from "react";
 import "./home.css";
 
+import { Productos } from "../../Productos";
+
 import Carousel from "../carousel/Carousel";
 import { Link } from "react-router-dom";
+
 function Home() {
+	const filtrar = (animal) => {
+		return Productos.filter((e) => e.tags.includes(animal));
+	};
+	const perros = filtrar("perro");
+	const gatos = filtrar("gato");
+	const conejo = filtrar("conejo");
+	const reptil = filtrar("reptiles");
+	const ave = filtrar("pájaros");
+
 	return (
 		<>
 			<Carousel />

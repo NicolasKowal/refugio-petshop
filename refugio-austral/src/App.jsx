@@ -17,6 +17,8 @@ function App() {
 					<Route path="/contacto" element={<Contact />} />
 					<Route path="/como-comprar" element={<ComoComprar />} />
 					<Route path="/Productos/:categoria" element={<ItemListContainer />} />
+					<Route path="/busqueda/:busqueda" element={<ItemListContainer />} />
+					<Route path="/:animal" element={<ItemListContainer />} />
 					<Route
 						path="productos/:categoria/producto/:id"
 						element={<ProductDetail />}
