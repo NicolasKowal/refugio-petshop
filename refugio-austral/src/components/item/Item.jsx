@@ -29,40 +29,44 @@ function Item({ id, nombre, precio, imagen, stock }) {
 					<img className="prod-img" src={imagen} alt={imagen} />
 				</Link>
 				<div className="card-body">
-					<h5 className="card-title">{nombre}</h5>
-					<p className="precio">${precio}</p>
+					<h5>{nombre}</h5>
+					<p>${precio}</p>
+					<div className="divCompra">
+						<div className="selectorCantidad">
+							<button
+								className="btn btn-dark"
+								onClick={() => {
+									if (cantidad !== 0) {
+										setCantidad(cantidad - 1);
+									}
+								}}
+							>
+								-
+							</button>
+							<p className="d-flex align-items-center">{cantidad}</p>
+							<button
+								className="btn btn-dark"
+								onClick={() => {
+									if (cantidad < stock) {
+										setCantidad(cantidad + 1);
+									}
+								}}
+							>
+								+
+							</button>
+						</div>
+						<div className="agregarAlCarrito">
+							<button
+								className="btn btn-dark"
+								onClick={() => {
+									HandleClick(nombre, cantidad);
+								}}
+							>
+								Agregar al carrito
+							</button>
+						</div>
+					</div>
 				</div>
-				<div className="divCompra">
-					<button
-						className="btn btn-dark"
-						onClick={() => {
-							if (cantidad !== 0) {
-								setCantidad(cantidad - 1);
-							}
-						}}
-					>
-						-
-					</button>
-					<p className="d-flex align-items-center">{cantidad}</p>
-					<button
-						className="btn btn-dark"
-						onClick={() => {
-							if (cantidad < stock) {
-								setCantidad(cantidad + 1);
-							}
-						}}
-					>
-						+
-					</button>
-				</div>
-				<button
-					className="btn btn-dark"
-					onClick={() => {
-						HandleClick(nombre, cantidad);
-					}}
-				>
-					Agregar al carrito
-				</button>
 			</div>
 		</>
 	);
