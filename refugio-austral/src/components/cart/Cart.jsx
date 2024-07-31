@@ -34,11 +34,19 @@ function Cart() {
 		setCarrito(carrito.filter((elemento) => elemento.id !== id));
 	};
 
+	const compra = {
+		background: "var(--color-terciario",
+		color: "var(--color-texto",
+	};
 	return (
 		<>
 			<div className="carro" onClick={handleClick}>
 				<ImCart size="30px" />
-				<p>{carrito.length}</p>
+				{carrito.length != 0 ? (
+					<p style={compra}>{carrito.length}</p>
+				) : (
+					<p>{carrito.length}</p>
+				)}
 			</div>
 			<div style={estilo} className="compra">
 				<div className="closeBar">
