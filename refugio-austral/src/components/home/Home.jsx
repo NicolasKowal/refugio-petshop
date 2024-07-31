@@ -7,14 +7,8 @@ import Carousel from "../carousel/Carousel";
 import { Link } from "react-router-dom";
 
 function Home() {
-	const filtrar = (animal) => {
-		return Productos.filter((e) => e.tags.includes(animal));
-	};
-	const perros = filtrar("perro");
-	const gatos = filtrar("gato");
-	const conejo = filtrar("conejo");
-	const reptil = filtrar("reptiles");
-	const ave = filtrar("pájaros");
+	let productosV = Productos.filter((producto) => producto.stock < 20);
+	productosV = productosV.slice(5, productosV.length - 1);
 
 	return (
 		<>
@@ -75,6 +69,14 @@ function Home() {
 					/>
 					<h5 className="p-3">Conejo</h5>
 				</Link>
+			</div>
+			<div>
+				{productosV.map((elemento) => (
+					<div key={elemento.id}>
+						<h2>{elemento.nombre}</h2>
+						<img src={elemento.imagen} alt="" />
+					</div>
+				))}
 			</div>
 		</>
 	);
