@@ -38,6 +38,7 @@ nav {
 	justify-content: space-between;
 }
 .cuadroBusqueda input {
+	padding-left: 5px;
 	width: 90%;
 	border-radius: 5px;
 }
