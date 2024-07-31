@@ -17,7 +17,7 @@ function Cart() {
 	};
 
 	const deleteHandleClick = (id) => {
-		setListaCarrito(carrito.filter((elemento) => elemento.id !== id));
+		setCarrito(carrito.filter((elemento) => elemento.id !== id));
 	};
 
 	return (
@@ -43,7 +43,7 @@ function Cart() {
 								<p className="col-6">{elemento.nombre}</p>
 								<p className="col-3">$ {elemento.total}</p>
 								<button
-									className="col-2 btn btn-dark d-flex align-items-center justify-content-center"
+									className="col-2 btn btn-dark d-flex align-items-center justify-content-center m-0"
 									onClick={() => {
 										deleteHandleClick(elemento.id);
 									}}
@@ -54,7 +54,7 @@ function Cart() {
 						))}
 					</ul>
 				</div>
-				<div className="finalizarCompra">
+				<div className="finalizarCompra d-flex align-items-center justify-content-center">
 					{carrito.length === 0 ? (
 						<button disabled>Finalizar compra</button>
 					) : (

@@ -5,20 +5,20 @@ import "./item.css";
 
 function Item({ id, nombre, precio, imagen, stock }) {
 	const [cantidad, setCantidad] = useState(0);
-	const { listaCarrito, setListaCarrito } = useContext(ShopList);
+	const { carrito, setCarrito } = useContext(ShopList);
 
 	const HandleClick = (nombre, cantidad) => {
 		if (cantidad !== 0) {
-			let buscarEnArray = listaCarrito.findIndex((x) => x.id === id);
+			let buscarEnArray = carrito.findIndex((x) => x.id === id);
 			if (buscarEnArray === -1) {
 				const total = cantidad * precio;
 				const newCartItem = { id, nombre, cantidad, total };
-				setListaCarrito([...listaCarrito, newCartItem]);
+				setCarrito([...carrito, newCartItem]);
 			} else {
-				const actualizarCarro = [...listaCarrito];
+				const actualizarCarro = [...carrito];
 				actualizarCarro[buscarEnArray].cantidad += cantidad;
 				actualizarCarro[buscarEnArray].total += cantidad * precio;
-				setListaCarrito(actualizarCarro);
+				setCarrito(actualizarCarro);
 			}
 		}
 	};
