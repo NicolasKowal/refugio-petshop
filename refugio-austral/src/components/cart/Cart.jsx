@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import { ImCart } from "react-icons/im";
 import { ShopList } from "../../context";
 
+import Swal from "sweetalert2";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./cart.css";
 
@@ -10,6 +11,19 @@ function Cart() {
 	const [xButton, setButton] = useState(false);
 	const [estilo, setEstilo] = useState({ display: "none" });
 	const { carrito, setCarrito } = useContext(ShopList);
+	const confirmacion = () => {
+		Swal.fire({
+			title: "¿Vaciar carrito de compras?",
+			icon: "question",
+			confirmButtonText: "Vaciar",
+			showCancelButton: "true",
+			cancelButtonText: "No vaciar",
+		}).then((response) => {
+			response.isConfirmed
+				? setCarrito([])
+				: Swal.fire("Mantendremos tu lista de compras intacta", "", "success");
+		});
+	};
 
 	const handleClick = () => {
 		setEstilo(xButton ? { display: "none" } : { display: "flex" });
@@ -54,11 +68,23 @@ function Cart() {
 						))}
 					</ul>
 				</div>
-				<div className="finalizarCompra d-flex align-items-center justify-content-center">
+				<div className="finalizarCompra d-flex align-items-center justify-content-around">
 					{carrito.length === 0 ? (
 						<button disabled>Finalizar compra</button>
 					) : (
 						<button className="btn btn-dark">Finalizar compra</button>
+					)}
+					{carrito.length > 0 ? (
+						<button
+							onClick={() => {
+								confirmacion();
+							}}
+							className="btn btn-dark"
+						>
+							Limpiar carrito
+						</button>
+					) : (
+						""
 					)}
 				</div>
 			</div>

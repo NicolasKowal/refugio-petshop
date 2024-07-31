@@ -53,6 +53,7 @@
 	list-style: none;
 	height: 10%;
 	width: 100%;
+	color: black;
 }
 .listaS li button {
 	height: 30px;
@@ -62,6 +63,7 @@
 .listaS li p {
 	height: 100%;
 	text-align: left;
+	color: black;
 }
 .listaS li:nth-child(2n) {
 	background: var(--color-terciario);
