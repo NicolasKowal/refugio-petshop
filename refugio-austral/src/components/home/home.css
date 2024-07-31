@@ -1,7 +1,10 @@
+main {
+	background: var(--color-secundario);
+}
 .container-img {
 	margin: 0 auto;
 	height: 350px;
-	width: 100%;
+	width: 90%;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -15,7 +18,11 @@
 	filter: opacity(100%);
 	transition: 0.3s ease;
 }
-
 .container-img img:hover {
 	scale: 1.1;
+}
+.productosMasVendidos {
+	width: 90%;
+	height: 450px;
+	background: var(--color-terciario);
 }

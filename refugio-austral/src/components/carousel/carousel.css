@@ -1,13 +1,7 @@
-/* {
-	height: 600px;
-	width: 100%;
-	position: relative;
-	z-index: 10;
-}
-*/
 .carousel {
+	margin: 0 auto;
 	height: 100%;
-	width: 100%;
+	width: 90%;
 }
 .carousel-item {
 	height: 600px;

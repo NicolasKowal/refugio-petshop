@@ -34,7 +34,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 					<div className="divCompra">
 						<div className="selectorCantidad">
 							<button
-								className="btn btn-dark"
+								className="btn"
 								onClick={() => {
 									if (cantidad !== 0) {
 										setCantidad(cantidad - 1);
@@ -45,7 +45,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 							</button>
 							<p className="d-flex align-items-center">{cantidad}</p>
 							<button
-								className="btn btn-dark"
+								className="btn"
 								onClick={() => {
 									if (cantidad < stock) {
 										setCantidad(cantidad + 1);

@@ -5,10 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function Contacto() {
 	return (
-		<div>
-			<h3 className="d-flex justify-content-center m-3">
+		<div className="contacto">
+			<br />
+			<h3 className="titulo">
 				Envianos un mensaje y nos pondremos en contacto con vos
 			</h3>
+			<br />
 			<form className="formulario">
 				<div className="fila">
 					<legend className="form-label fw-light">Nombre</legend>
@@ -67,9 +69,9 @@ function Contacto() {
 					</button>
 				</div>
 			</form>
-			<h3 className="d-flex justify-content-center titulo">
-				Tambien encontranos en nuestras redes sociales
-			</h3>
+			<br />
+			<h3 className="titulo">Tambien encontranos en nuestras redes sociales</h3>
+			<br />
 			<div className="container-redes">
 				<a href="">
 					<img
@@ -89,6 +91,16 @@ function Contacto() {
 						alt=""
 					/>
 				</a>
+			</div>
+			<div className="d-flex flex-column">
+				<br />
+				<h3 className="titulo">Nuestro local</h3>
+				<br />
+				<iframe
+					className="mapa"
+					src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24397.631646320388!2d-71.3335256!3d-40.1488777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96110e743605d0c7%3A0x71c43ffb1c66bc3a!2sSan%20Mart%C3%ADn%20de%20los%20Andes%2C%20Neuqu%C3%A9n!5e0!3m2!1ses-419!2sar!4v1722454007905!5m2!1ses-419!2sar"
+				/>
+				<br />
 			</div>
 		</div>
 	);

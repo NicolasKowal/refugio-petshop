@@ -20,3 +20,14 @@
 .typeOfError img {
 	width: 42%;
 }
+.titulo {
+	height: 60px;
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 3px;
+	background: var(--color-terciario);
+	color: var(--color-texto);
+}

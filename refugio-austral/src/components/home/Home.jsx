@@ -1,18 +1,22 @@
 import React from "react";
-import "./home.css";
 
-import { Productos } from "../../Productos";
-
-import Carousel from "../carousel/Carousel";
 import { Link } from "react-router-dom";
+import { Productos } from "../../Productos";
+import Item from "../item/Item";
+import Carousel from "../carousel/Carousel";
+import "./home.css";
 
 function Home() {
 	let productosV = Productos.filter((producto) => producto.stock < 20);
 	productosV = productosV.slice(5, productosV.length - 1);
 
 	return (
-		<>
+		<main>
+			<br />
 			<Carousel />
+			<br />
+			<h3 className="titulo">Todo lo que tu mascota necesite</h3>
+			<br />
 			<div className="container-img">
 				<Link
 					className="d-flex flex-column justify-content-center align-items-center"
@@ -70,15 +74,22 @@ function Home() {
 					<h5 className="p-3">Conejo</h5>
 				</Link>
 			</div>
-			<div>
+			<br />
+			<h3 className="titulo">Lo mas vendido</h3>
+			<br />
+			<div className="productosMasVendidos d-flex align-items-center justify-content-around w-90 mx-auto">
 				{productosV.map((elemento) => (
-					<div key={elemento.id}>
-						<h2>{elemento.nombre}</h2>
-						<img src={elemento.imagen} alt="" />
-					</div>
+					<Item
+						nombre={elemento.nombre}
+						precio={elemento.precio}
+						imagen={elemento.imagen}
+						stock={elemento.stock}
+						id={elemento.id}
+					/>
 				))}
 			</div>
-		</>
+			<br />
+		</main>
 	);
 }
 

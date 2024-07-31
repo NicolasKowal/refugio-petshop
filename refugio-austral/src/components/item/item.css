@@ -2,33 +2,38 @@
 	height: 400px;
 	width: 250px;
 	padding-top: 5px;
+	border-radius: 10px;
+	background: var(--color-cuaternario);
 }
 .img-contenedor {
-	height: 50%;
+	height: 40%;
 	width: 100%;
 	display: flex;
 }
 .img-contenedor img {
-	border-radius: 50%;
+	border-radius: 5px;
 	width: 75%;
+	aspect-ratio: 1/1;
 	margin: 0 auto;
 }
 .card-body {
-	height: 50%;
+	height: 60%;
 	width: 100%;
 	margin: 0 auto;
 }
 .card-body h5 {
-	height: 25%;
+	height: 35%;
 	width: 100%;
 	text-align: center;
+	margin: 0;
 }
 .card-body p {
-	height: 15%;
+	height: 10%;
 	width: 75%;
 	margin: 0 auto;
 	text-align: center;
 	font-size: 1.3em;
+	color: black;
 }
 .divCompra {
 	height: 60%;
@@ -37,22 +42,30 @@
 	flex-direction: column;
 	align-items: center;
 }
-.agregarAlCarrito,
-.selectorCantidad {
+.agregarAlCarrito {
 	height: 50%;
 	width: 100%;
+}
+.selectorCantidad {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50%;
+	width: 60%;
+}
+.selectorCantidad button {
+	font-size: 2em;
 }
 .divCompra div {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
 }
 .divCompra p {
 	height: 100%;
-	align-items: center;
-	font-size: 1.3em;
+	font-size: 1.5em;
+	color: black;
 }
 .agregarAlCarrito button {
 	width: 100%;
-	height: 100%;
+	height: 80%;
 }
