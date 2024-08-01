@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Productos } from "../../Productos";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -6,7 +6,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Item from "../item/Item";
 import { useParams } from "react-router-dom";
 
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+
 function ItemList() {
+	const [prod, setProd] = useState([]);
+	useEffect(() => {
+		const dv = getFirestore();
+		const docId = "AIzaSyBCeeul0iuroblYpkYkmwIBL20KxGLnsLM";
+
+		const biciRef = doc(dv, "item", docId);
+		getDoc(biciRef).then((snapshot) =>
+			snapshot.exists()
+				? setProd(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data })))
+				: ""
+		);
+	}, []);
+	console.log(prod);
+
 	const { categoria } = useParams();
 	const { animal } = useParams();
 	const { busqueda } = useParams();

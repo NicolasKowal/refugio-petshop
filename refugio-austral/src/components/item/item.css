@@ -55,6 +55,8 @@
 }
 .selectorCantidad button {
 	font-size: 2em;
+	height: 100%;
+	background: none;
 }
 .divCompra div {
 	display: flex;

@@ -35,8 +35,8 @@ function Cart() {
 	};
 
 	const compra = {
-		background: "var(--color-terciario",
-		color: "var(--color-texto",
+		background: "var(--color-quinto",
+		color: "black",
 	};
 	return (
 		<>
