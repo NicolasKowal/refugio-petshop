@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Productos } from "../../Productos";
+// import { Productos } from "../../Productos";
 import { Link } from "react-router-dom";
+
+import { db } from "../..";
+import { collection, getDocs } from "firebase/firestore";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./productDetail.css";
 
 function ProductDetail() {
+	const [Productos, setProductos] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const itemCollection = collection(db, "items");
+			const itemSnapshot = await getDocs(itemCollection);
+			const itemList = itemSnapshot.docs.map((doc) => ({
+				id: doc.id,
+				...doc.data(),
+			}));
+			setProductos(itemList);
+		};
+
+		fetchData();
+	}, []);
 	const { id } = useParams();
 	const producto = Productos.find((elemento) => elemento.id === parseInt(id));
 

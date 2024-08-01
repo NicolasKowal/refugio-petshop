@@ -1,10 +1,29 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./navBar.css";
 import { Link } from "react-router-dom";
-import { Productos } from "../../Productos";
+// import { Productos } from "../../Productos";
 import Cart from "../cart/Cart";
+import { db } from "../..";
+
+import { collection, getDocs } from "firebase/firestore";
 
 function Navbar() {
+	const [Productos, setProductos] = useState([]);
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const itemCollection = collection(db, "items");
+			const itemSnapshot = await getDocs(itemCollection);
+			const itemList = itemSnapshot.docs.map((doc) => ({
+				id: doc.id,
+				...doc.data(),
+			}));
+			setProductos(itemList);
+		};
+
+		fetchData();
+	}, []);
+
 	let categorias = Productos.map((p) => p.categoria);
 	let categoriasFitradas = ["Todos"];
 	categorias.forEach((categoria) => {
