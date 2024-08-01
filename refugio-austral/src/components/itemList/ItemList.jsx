@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-// import { Productos } from "../../Productos";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useParams } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../..";
 
 import Item from "../item/Item";
-import { useParams } from "react-router-dom";
-import { db } from "../..";
-import { collection, getDocs } from "firebase/firestore";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./itemList.css";
 
 function ItemList() {
+	const { categoria } = useParams();
+	const { animal } = useParams();
+	const { busqueda } = useParams();
 	const [Productos, setProductos] = useState([]);
-
+	const [loading, setLoading] = useState(true);
 	useEffect(() => {
 		const fetchData = async () => {
 			const itemCollection = collection(db, "items");
@@ -20,14 +24,10 @@ function ItemList() {
 				...doc.data(),
 			}));
 			setProductos(itemList);
+			setLoading(false);
 		};
-
 		fetchData();
 	}, []);
-
-	const { categoria } = useParams();
-	const { animal } = useParams();
-	const { busqueda } = useParams();
 
 	let ProductosAMostrar = [];
 	if (categoria === "Todos") {
@@ -51,6 +51,9 @@ function ItemList() {
 		ProductosAMostrar = Productos.filter(
 			(producto) => producto.categoria === categoria
 		);
+	}
+	if (loading) {
+		return <span className="loader" />;
 	}
 	return (
 		<div className="grid-container">

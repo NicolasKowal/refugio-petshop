@@ -1,15 +1,30 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../..";
 import { Link } from "react-router-dom";
-import { Productos } from "../../Productos";
 import Item from "../item/Item";
 import Carousel from "../carousel/Carousel";
 import "./home.css";
 
 function Home() {
+	const [Productos, setProductos] = useState([]);
+	const [loading, setLoading] = useState(true);
+	useEffect(() => {
+		const fetchData = async () => {
+			const itemCollection = collection(db, "items");
+			const itemSnapshot = await getDocs(itemCollection);
+			const itemList = itemSnapshot.docs.map((doc) => ({
+				id: doc.id,
+				...doc.data(),
+			}));
+			setProductos(itemList);
+			setLoading(false);
+		};
+		fetchData();
+	}, []);
+
 	let productosV = Productos.filter((producto) => producto.stock < 20);
 	productosV = productosV.slice(5, productosV.length - 1);
-
 	return (
 		<main>
 			<br />
@@ -77,6 +92,7 @@ function Home() {
 			<br />
 			<h3 className="titulo">Lo mas vendido</h3>
 			<br />
+			{loading ? <span className="loader" /> : ""}
 			<div className="productosMasVendidos d-flex align-items-center justify-content-around w-90 mx-auto">
 				{productosV.map((elemento) => (
 					<Item
