@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-// import { Productos } from "../../Productos";
 import { Link } from "react-router-dom";
 
 import { db } from "../..";
@@ -11,6 +10,7 @@ import "./productDetail.css";
 
 function ProductDetail() {
 	const [Productos, setProductos] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -21,6 +21,7 @@ function ProductDetail() {
 				...doc.data(),
 			}));
 			setProductos(itemList);
+			setLoading(false);
 		};
 
 		fetchData();
@@ -35,7 +36,9 @@ function ProductDetail() {
 			</div>
 		);
 	}
-
+	if (loading) {
+		return <span className="loader" />;
+	}
 	return (
 		<>
 			<div className="container-producto">
@@ -53,7 +56,7 @@ function ProductDetail() {
 				</div>
 			</div>
 			<div className="p-3 d-flex align-items-center justify-content-end w-75">
-				<Link to={"/productos/Todos"}>
+				<Link to={"/productos/"}>
 					<button className="btn btn-secondary">Volver</button>
 				</Link>
 			</div>

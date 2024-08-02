@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./navBar.css";
 import { Link } from "react-router-dom";
-// import { Productos } from "../../Productos";
 import Cart from "../cart/Cart";
 import { db } from "../..";
 

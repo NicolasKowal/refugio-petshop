@@ -18,16 +18,25 @@
 	background: var(--color-texto);
 	color: #16161d;
 }
+.sombra {
+	background: rgba(0, 0, 0, 0.336);
+	height: 1000px;
+	width: 400vh;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 0;
+}
 .compra {
-	min-height: 500px;
+	min-height: 900px;
 	width: 30%;
 	border-radius: 5px;
 	position: absolute;
-	right: 10px;
-	top: 10px;
+	right: 5px;
+	top: 5px;
 	display: flex;
 	flex-direction: column;
-	z-index: 100000;
+	z-index: 3000;
 	background: var(--color-texto);
 	border: 1px solid black;
 }

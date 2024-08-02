@@ -48,6 +48,7 @@ function Cart() {
 					<p>{carrito.length}</p>
 				)}
 			</div>
+			<div style={estilo} className="sombra" onClick={handleClick}></div>
 			<div style={estilo} className="compra">
 				<div className="closeBar">
 					<button className="btn btn-dark" onClick={handleClick}>

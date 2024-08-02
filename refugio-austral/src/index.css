@@ -31,3 +31,6 @@
 	background: var(--color-terciario);
 	color: var(--color-texto);
 }
+.loadingStyle {
+	min-height: 600px;
+}
