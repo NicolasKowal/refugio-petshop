@@ -105,6 +105,23 @@ function Home() {
 				))}
 			</div>
 			<br />
+			<div className="suscribe d-flex mx-0">
+				<div className="d-flex align-items-center">
+					<img
+						src="https://i.postimg.cc/R0KpBtNy/gratis-png-golden-retriever-cachorros-ninos-y-perros-una-guia-profesional-para-ayudar-a-las-familias.png"
+						alt="perro"
+					/>
+					<h3 className="d-flex align-items-center">
+						Suscribite para recibir todos los descuentos y sorteos
+					</h3>
+				</div>
+				<div className="d-flex align-items-center justify-content-start">
+					<input type="text" className="text" />
+					<button type="submit" className="btn btn-dark">
+						Suscribirse
+					</button>
+				</div>
+			</div>
 		</main>
 	);
 }

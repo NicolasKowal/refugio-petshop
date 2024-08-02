@@ -26,3 +26,28 @@ main {
 	height: 450px;
 	background: var(--color-terciario);
 }
+.suscribe {
+	height: 200px;
+	width: 100%;
+	margin-top: 100px;
+	background: none;
+}
+.suscribe div {
+	height: 50%;
+	width: 50%;
+	background: var(--color-cuaternario);
+}
+.suscribe h3 {
+	color: var(--color-texto);
+}
+.suscribe img {
+	height: 200px;
+	position: relative;
+	bottom: 50px;
+}
+.suscribe input {
+	height: 40px;
+	width: 50%;
+	margin-right: 10px;
+	border-radius: 10px;
+}
