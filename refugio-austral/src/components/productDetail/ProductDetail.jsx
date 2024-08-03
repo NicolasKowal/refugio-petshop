@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import { db } from "../..";
+import { db } from "../../main";
 import { collection, getDocs } from "firebase/firestore";
 
 import "bootstrap/dist/css/bootstrap.min.css";

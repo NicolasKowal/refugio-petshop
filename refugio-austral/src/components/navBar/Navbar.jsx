@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./navBar.css";
 import { Link } from "react-router-dom";
 import Cart from "../cart/Cart";
-import { db } from "../..";
+import { db } from "../../main";
 
 import { collection, getDocs } from "firebase/firestore";
 

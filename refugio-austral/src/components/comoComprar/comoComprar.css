@@ -1,0 +1,38 @@
+.container {
+	padding: 20px;
+	font-family: Arial, sans-serif;
+}
+
+.heading {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.section {
+	margin-bottom: 20px;
+}
+
+.subheading {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.text {
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+.list {
+	padding-left: 20px;
+}
+
+.qrCode {
+	display: flex;
+	justify-content: center;
+	margin-top: 10px;
+}
+
+.qrImage {
+	width: 200px;
+	height: 200px;
+}
