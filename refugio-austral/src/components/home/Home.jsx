@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../main";
+import React from "react";
 import { Link } from "react-router-dom";
+
 import Item from "../item/Item";
 import Carousel from "../carousel/Carousel";
+import customHookFirebase from "../../customHookFirebase";
+
 import "./home.css";
-export { Productos };
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function Home() {
-	const [Productos, setProductos] = useState([]);
-	const [loading, setLoading] = useState(true);
-	useEffect(() => {
-		const fetchData = async () => {
-			const itemCollection = collection(db, "items");
-			const itemSnapshot = await getDocs(itemCollection);
-			const itemList = itemSnapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setProductos(itemList);
-			setLoading(false);
-		};
-		fetchData();
-	}, []);
+	const { Productos, loading, error } = customHookFirebase("items");
 
 	let productosV = Productos.filter((producto) => producto.stock < 20);
 	productosV = productosV.slice(5, productosV.length - 1);
@@ -125,5 +113,4 @@ function Home() {
 		</main>
 	);
 }
-
 export default Home;

@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import { useParams } from "react-router-dom";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../main";
 
 import Item from "../item/Item";
+import customHookFirebase from "../../customHookFirebase";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./itemList.css";
@@ -13,21 +11,8 @@ function ItemList() {
 	const { categoria } = useParams();
 	const { animal } = useParams();
 	const { busqueda } = useParams();
-	const [Productos, setProductos] = useState([]);
-	const [loading, setLoading] = useState(true);
-	useEffect(() => {
-		const fetchData = async () => {
-			const itemCollection = collection(db, "items");
-			const itemSnapshot = await getDocs(itemCollection);
-			const itemList = itemSnapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setProductos(itemList);
-			setLoading(false);
-		};
-		fetchData();
-	}, []);
+
+	const { Productos, loading, error } = customHookFirebase("items");
 
 	let ProductosAMostrar = [];
 	if (categoria === "Todos") {
@@ -54,6 +39,9 @@ function ItemList() {
 	}
 	if (loading) {
 		return <span className="loader" />;
+	}
+	if (error) {
+		return <p>error</p>;
 	}
 	return (
 		<div className="grid-container">

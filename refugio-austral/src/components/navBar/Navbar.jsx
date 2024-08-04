@@ -1,27 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./navBar.css";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Cart from "../cart/Cart";
-import { db } from "../../main";
 
-import { collection, getDocs } from "firebase/firestore";
+import Cart from "../cart/Cart";
+import customHookFirebase from "../../customHookFirebase";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./navBar.css";
 
 function Navbar() {
-	const [Productos, setProductos] = useState([]);
-
-	useEffect(() => {
-		const fetchData = async () => {
-			const itemCollection = collection(db, "items");
-			const itemSnapshot = await getDocs(itemCollection);
-			const itemList = itemSnapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setProductos(itemList);
-		};
-
-		fetchData();
-	}, []);
+	const { Productos, loading, error } = customHookFirebase("items");
 
 	let categorias = Productos.map((p) => p.categoria);
 	let categoriasFitradas = ["Todos"];
@@ -35,7 +22,9 @@ function Navbar() {
 	const handleClick = () => {
 		setValorBusqueda(busqueda.current.value);
 	};
-
+	if (error) {
+		return <p>error</p>;
+	}
 	return (
 		<nav>
 			<div className="containerNav">
@@ -54,7 +43,7 @@ function Navbar() {
 				<div className="cuadroBusqueda">
 					<input type="text" onChange={handleClick} ref={busqueda}></input>
 					<Link to={`/busqueda/${valorBusqueda}`}>
-						<button className="">🔎</button>
+						<button>🔎</button>
 					</Link>
 				</div>
 				<Cart />

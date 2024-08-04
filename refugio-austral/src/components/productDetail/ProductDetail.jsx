@@ -1,31 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-
-import { db } from "../../main";
-import { collection, getDocs } from "firebase/firestore";
+import customHookFirebase from "../../customHookFirebase";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./productDetail.css";
 
 function ProductDetail() {
-	const [Productos, setProductos] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const { Productos, loading, error } = customHookFirebase("items");
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const itemCollection = collection(db, "items");
-			const itemSnapshot = await getDocs(itemCollection);
-			const itemList = itemSnapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setProductos(itemList);
-			setLoading(false);
-		};
-
-		fetchData();
-	}, []);
 	const { id } = useParams();
 	const producto = Productos.find((elemento) => elemento.id === parseInt(id));
 
