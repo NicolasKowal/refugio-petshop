@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Item from "../item/Item";
 import Carousel from "../carousel/Carousel";
 import "./home.css";
-
+export { Productos };
 function Home() {
 	const [Productos, setProductos] = useState([]);
 	const [loading, setLoading] = useState(true);
