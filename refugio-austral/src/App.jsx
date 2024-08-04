@@ -7,6 +7,7 @@ import NoPage from "./components/noPage/NoPage";
 import ComoComprar from "./components/comoComprar/ComoComprar";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import ProductDetail from "./components/productDetail/ProductDetail";
+import FinalizarCompra from "./components/finalizarCompra/FinalizarCompra";
 
 function App() {
 	return (
@@ -30,6 +31,7 @@ function App() {
 						element={<ProductDetail />}
 					/>
 					<Route path="*" element={<NoPage />} />
+					<Route path="/finalizar-compra" element={<FinalizarCompra />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

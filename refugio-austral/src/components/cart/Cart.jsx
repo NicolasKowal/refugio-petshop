@@ -6,6 +6,7 @@ import { ShopList } from "../../context";
 import Swal from "sweetalert2";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./cart.css";
+import { Link } from "react-router-dom";
 
 function Cart() {
 	const [xButton, setButton] = useState(false);
@@ -81,7 +82,9 @@ function Cart() {
 					{carrito.length === 0 ? (
 						<button disabled>Finalizar compra</button>
 					) : (
-						<button className="btn btn-dark">Finalizar compra</button>
+						<Link to="finalizar-compra">
+							<button className="btn btn-dark">Finalizar compra</button>
+						</Link>
 					)}
 					{carrito.length > 0 ? (
 						<button
