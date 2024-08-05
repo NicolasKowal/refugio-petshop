@@ -12,7 +12,7 @@ function Home() {
 	const { Productos, loading, error } = customHookFirebase("items");
 
 	let productosV = Productos.filter((producto) => producto.stock < 20);
-	productosV = productosV.slice(5, productosV.length - 1);
+
 	return (
 		<main>
 			<br />
