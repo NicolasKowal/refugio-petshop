@@ -10,7 +10,7 @@ function ProductDetail() {
 	const { Productos, loading, error } = customHookFirebase("items");
 
 	const { id } = useParams();
-	const producto = Productos.find((elemento) => elemento.id === parseInt(id));
+	const producto = Productos.find((elemento) => elemento.id === id);
 
 	if (!producto) {
 		return (
@@ -39,7 +39,7 @@ function ProductDetail() {
 				</div>
 			</div>
 			<div className="p-3 d-flex align-items-center justify-content-end w-75">
-				<Link to={"/productos/"}>
+				<Link to={"/productos/Todos"}>
 					<button className="btn btn-secondary">Volver</button>
 				</Link>
 			</div>
