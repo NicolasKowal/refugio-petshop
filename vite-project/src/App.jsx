@@ -6,13 +6,14 @@ import Modificar from "./Modificar.jsx";
 
 function App() {
 	return (
+		// < aca va el provider>
 		<>
 			{/* 
 			<Componente />
 			<Coleccion /> 	
 			<Query />
-			<Creacion />*/}
-			<Modificar />
+			<Creacion />
+			*/}
 		</>
 	);
 }
