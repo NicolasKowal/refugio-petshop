@@ -1,0 +1,44 @@
+.containerCompra {
+	background: var(--color-secundario);
+	color: var(--color-texto);
+	min-height: 750px;
+	padding-inline: 30px;
+}
+.encabezado {
+	width: 100%;
+}
+.productos {
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+.container p {
+	text-align: center;
+	height: 40px;
+}
+.total {
+	height: 75px;
+	width: 90%;
+	margin: 0 auto;
+	background: none;
+	padding-right: 15px;
+}
+.total h3 {
+	height: 100%;
+	width: 15%;
+	background: var(--color-terciario);
+}
+.formDatos {
+	width: 50%;
+	margin: 0 auto;
+}
+.formDatos div {
+	height: 75px;
+	width: 75%;
+}
+.formDatos input {
+	width: 75%;
+	height: 50%;
+	border-radius: 5px;
+	padding-left: 5px;
+}

@@ -10,11 +10,10 @@ import { Link } from "react-router-dom";
 
 const GuardarStorage = (array, nombre) => {
 	const listaJSON = JSON.stringify(array);
-	localStorage.setItem(nombre, listaJSON);
+	sessionStorage.setItem(nombre, listaJSON);
 };
 
 function Cart() {
-	const estiloSwal = { zIndex: 100000 };
 	const [xButton, setButton] = useState(false);
 	const [estilo, setEstilo] = useState({ display: "none" });
 	const { carrito, setCarrito } = useContext(ShopList);
@@ -91,7 +90,7 @@ function Cart() {
 					{carrito.length === 0 ? (
 						<button disabled>Finalizar compra</button>
 					) : (
-						<Link style={estilo} onClick={handleClick} to="finalizar-compra">
+						<Link style={estilo} onClick={handleClick} to="confirmar-compra">
 							<button className="btn btn-dark">Finalizar compra</button>
 						</Link>
 					)}
