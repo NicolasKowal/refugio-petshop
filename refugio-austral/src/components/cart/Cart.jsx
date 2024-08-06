@@ -8,7 +8,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./cart.css";
 import { Link } from "react-router-dom";
 
+const GuardarStorage = (array, nombre) => {
+	const listaJSON = JSON.stringify(array);
+	localStorage.setItem(nombre, listaJSON);
+};
+
 function Cart() {
+	const estiloSwal = { zIndex: 100000 };
 	const [xButton, setButton] = useState(false);
 	const [estilo, setEstilo] = useState({ display: "none" });
 	const { carrito, setCarrito } = useContext(ShopList);
@@ -33,6 +39,7 @@ function Cart() {
 
 	const deleteHandleClick = (id) => {
 		setCarrito(carrito.filter((elemento) => elemento.id !== id));
+		GuardarStorage(carrito, "carrito");
 	};
 
 	const compra = {

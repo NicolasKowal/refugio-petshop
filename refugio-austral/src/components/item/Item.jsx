@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import { ShopList } from "../../context";
 import "./item.css";
 
+const GuardarStorage = (array, nombre) => {
+	const listaJSON = JSON.stringify(array);
+	localStorage.setItem(nombre, listaJSON);
+};
+
 function Item({ id, nombre, precio, imagen, stock }) {
 	const [cantidad, setCantidad] = useState(0);
 	const { carrito, setCarrito } = useContext(ShopList);
@@ -13,12 +18,15 @@ function Item({ id, nombre, precio, imagen, stock }) {
 			if (buscarEnArray === -1) {
 				const total = cantidad * precio;
 				const newCartItem = { id, nombre, cantidad, total };
-				setCarrito([...carrito, newCartItem]);
+				const newCart = [...carrito, newCartItem];
+				setCarrito(newCart);
+				GuardarStorage(newCart, "carrito");
 			} else {
 				const actualizarCarro = [...carrito];
 				actualizarCarro[buscarEnArray].cantidad += cantidad;
 				actualizarCarro[buscarEnArray].total += cantidad * precio;
 				setCarrito(actualizarCarro);
+				GuardarStorage(actualizarCarro, "carrito");
 			}
 		}
 	};
