@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
-import { productos } from "./src/Productos.js";
+import { productos } from "./src/firebase/Productos.js";
 const firebaseConfig = {
 	apiKey: "AIzaSyBCeeul0iuroblYpkYkmwIBL20KxGLnsLM",
 	authDomain: "refugio-austral.firebaseapp.com",

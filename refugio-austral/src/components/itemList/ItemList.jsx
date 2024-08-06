@@ -29,8 +29,8 @@ function ItemList() {
 			);
 		}
 	} else if (!categoria && !busqueda) {
-		ProductosAMostrar = Productos.filter((producto) =>
-			producto.tags.includes(animal)
+		ProductosAMostrar = Productos.filter(
+			(producto) => producto.tags && producto.tags.includes(animal)
 		);
 	} else if (!animal && !busqueda) {
 		ProductosAMostrar = Productos.filter(

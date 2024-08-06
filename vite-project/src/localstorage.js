@@ -1,10 +1,10 @@
-const CantidadJSON = localStorage.getItem("carrito");
+const CantidadJSON = localStorage.getItem("");
 if (CantidadJSON) {
 	const Cantidad = JSON.parse(CantidadJSON);
 	array = Cantidad;
 }
 
-const RecuperadoJSON = localStorage.getItem("carrito");
+const RecuperadoJSON = localStorage.getItem("");
 
 if (RecuperadoJSON) {
 	const Recuperado = JSON.parse(RecuperadoJSON);

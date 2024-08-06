@@ -7,6 +7,7 @@ export const productos = [
 		stock: 100,
 		categoria: "Accesorios",
 		imagen: "https://via.placeholder.com/150?text=Collar+para+Perro",
+		tags: ["perro", "collar", "ajustable", "paseo", "entrenamiento"],
 	},
 	{
 		nombre: "Comida para Gato",
@@ -16,6 +17,7 @@ export const productos = [
 		stock: 50,
 		categoria: "Alimentos",
 		imagen: "https://via.placeholder.com/150?text=Comida+para+Gato",
+		tags: ["gato", "alimento", "premium", "dieta", "proteínas"],
 	},
 	{
 		nombre: "Juguete para Perro",
@@ -25,6 +27,7 @@ export const productos = [
 		stock: 150,
 		categoria: "Juguetes",
 		imagen: "https://via.placeholder.com/150?text=Juguete+para+Perro",
+		tags: ["perro", "juguete", "pelota", "masticar", "salud"],
 	},
 	{
 		nombre: "Arena para Gato",
@@ -34,6 +37,7 @@ export const productos = [
 		stock: 70,
 		categoria: "Higiene",
 		imagen: "https://via.placeholder.com/150?text=Arena+para+Gato",
+		tags: ["gato", "arena", "sanitaria", "higiene", "aglomerante"],
 	},
 	{
 		nombre: "Cama para Perro",
@@ -43,6 +47,7 @@ export const productos = [
 		stock: 30,
 		categoria: "Muebles",
 		imagen: "https://via.placeholder.com/150?text=Cama+para+Perro",
+		tags: ["perro", "cama", "acolchonada", "comodidad", "descanso"],
 	},
 	{
 		nombre: "Pecera",
@@ -52,6 +57,7 @@ export const productos = [
 		stock: 20,
 		categoria: "Acuarios",
 		imagen: "https://via.placeholder.com/150?text=Pecera",
+		tags: ["pecera", "vidrio", "acuáticos", "elegante", "hogar"],
 	},
 	{
 		nombre: "Rascador para Gato",
@@ -61,6 +67,7 @@ export const productos = [
 		stock: 45,
 		categoria: "Juguetes",
 		imagen: "https://via.placeholder.com/150?text=Rascador+para+Gato",
+		tags: ["gato", "rascador", "sisal", "uñas", "ejercicio"],
 	},
 	{
 		nombre: "Correa Extensible",
@@ -70,6 +77,7 @@ export const productos = [
 		stock: 80,
 		categoria: "Accesorios",
 		imagen: "https://via.placeholder.com/150?text=Correa+Extensible",
+		tags: ["perro", "correa", "extensible", "paseo", "movimiento"],
 	},
 	{
 		nombre: "Jaula para Pájaros",
@@ -79,6 +87,7 @@ export const productos = [
 		stock: 25,
 		categoria: "Jaulas",
 		imagen: "https://via.placeholder.com/150?text=Jaula+para+P%C3%A1jaros",
+		tags: ["jaula", "pájaros", "espaciosa", "perchas", "canarios"],
 	},
 	{
 		nombre: "Comida para Hámster",
@@ -88,6 +97,7 @@ export const productos = [
 		stock: 60,
 		categoria: "Alimentos",
 		imagen: "https://via.placeholder.com/150?text=Comida+para+H%C3%A1mster",
+		tags: ["hámster", "comida", "semillas", "nutritiva", "salud"],
 	},
 	{
 		nombre: "Filtro para Pecera",
@@ -97,6 +107,7 @@ export const productos = [
 		stock: 40,
 		categoria: "Acuarios",
 		imagen: "https://via.placeholder.com/150?text=Filtro+para+Pecera",
+		tags: ["pecera", "filtro", "agua", "limpia", "acuario"],
 	},
 	{
 		nombre: "Chaleco Salvavidas",
@@ -106,6 +117,7 @@ export const productos = [
 		stock: 35,
 		categoria: "Accesorios",
 		imagen: "https://via.placeholder.com/150?text=Chaleco+Salvavidas",
+		tags: ["perro", "chaleco", "salvavidas", "seguridad", "agua"],
 	},
 	{
 		nombre: "Comedero Automático",
@@ -115,6 +127,7 @@ export const productos = [
 		stock: 15,
 		categoria: "Alimentos",
 		imagen: "https://via.placeholder.com/150?text=Comedero+Autom%C3%A1tico",
+		tags: ["gato", "comedero", "automático", "programable", "comida"],
 	},
 	{
 		nombre: "Juguete Interactivo para Gato",
@@ -125,6 +138,7 @@ export const productos = [
 		categoria: "Juguetes",
 		imagen:
 			"https://via.placeholder.com/150?text=Juguete+Interactivo+para+Gato",
+		tags: ["gato", "juguete", "interactivo", "luces", "ejercicio"],
 	},
 	{
 		nombre: "Caseta para Perro",
@@ -134,6 +148,7 @@ export const productos = [
 		stock: 10,
 		categoria: "Muebles",
 		imagen: "https://via.placeholder.com/150?text=Caseta+para+Perro",
+		tags: ["perro", "caseta", "plástico", "exteriores", "protección"],
 	},
 	{
 		nombre: "Champú para Perro",
@@ -143,6 +158,7 @@ export const productos = [
 		stock: 55,
 		categoria: "Higiene",
 		imagen: "https://via.placeholder.com/150?text=Champ%C3%BA+para+Perro",
+		tags: ["perro", "champú", "hipoalergénico", "pelaje", "fragancia"],
 	},
 	{
 		nombre: "Acuario Plantado",
@@ -152,6 +168,7 @@ export const productos = [
 		stock: 8,
 		categoria: "Acuarios",
 		imagen: "https://via.placeholder.com/150?text=Acuario+Plantado",
+		tags: ["acuario", "plantas", "iluminación", "natural", "elegante"],
 	},
 	{
 		nombre: "Correa Reflectante",
@@ -161,6 +178,7 @@ export const productos = [
 		stock: 70,
 		categoria: "Accesorios",
 		imagen: "https://via.placeholder.com/150?text=Correa+Reflectante",
+		tags: ["perro", "correa", "reflectante", "seguridad", "nocturna"],
 	},
 	{
 		nombre: "Comida para Peces",
@@ -170,6 +188,7 @@ export const productos = [
 		stock: 100,
 		categoria: "Alimentos",
 		imagen: "https://via.placeholder.com/150?text=Comida+para+Peces",
+		tags: ["peces", "comida", "nutritiva", "tropicales", "acuarios"],
 	},
 	{
 		nombre: "Transportadora para Mascotas",
@@ -179,6 +198,7 @@ export const productos = [
 		stock: 30,
 		categoria: "Accesorios",
 		imagen: "https://via.placeholder.com/150?text=Transportadora+para+Mascotas",
+		tags: ["mascotas", "transportadora", "viajes", "veterinario", "segura"],
 	},
 	{
 		nombre: "Juguete Mordedor para Perro",
@@ -188,6 +208,7 @@ export const productos = [
 		stock: 85,
 		categoria: "Juguetes",
 		imagen: "https://via.placeholder.com/150?text=Juguete+Mordedor+para+Perro",
+		tags: ["perro", "juguete", "mordedor", "cuerda", "dientes"],
 	},
 	{
 		nombre: "Filtro UV para Pecera",
@@ -197,6 +218,7 @@ export const productos = [
 		stock: 12,
 		categoria: "Acuarios",
 		imagen: "https://via.placeholder.com/150?text=Filtro+UV+para+Pecera",
+		tags: ["pecera", "filtro", "UV", "algas", "bacterias"],
 	},
 	{
 		nombre: "Lámpara de Calor para Reptiles",
@@ -207,5 +229,6 @@ export const productos = [
 		categoria: "Acuarios",
 		imagen:
 			"https://via.placeholder.com/150?text=L%C3%A1mpara+de+Calor+para+Reptiles",
+		tags: ["reptiles", "lámpara", "calor", "terrario", "bienestar"],
 	},
 ];
