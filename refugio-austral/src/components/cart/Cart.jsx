@@ -45,7 +45,7 @@ function Cart() {
 	GuardarStorage(carritoEliminado, "carrito");
 
 	const compra = {
-		background: "var(--color-quinto",
+		background: "var(--color-quinto)",
 		color: "black",
 	};
 	return (
@@ -91,13 +91,15 @@ function Cart() {
 					{carrito.length === 0 ? (
 						<button disabled>Finalizar compra</button>
 					) : (
-						<Link to="finalizar-compra">
+						<Link style={estilo} onClick={handleClick} to="finalizar-compra">
 							<button className="btn btn-dark">Finalizar compra</button>
 						</Link>
 					)}
 					{carrito.length > 0 ? (
 						<button
+							style={estilo}
 							onClick={() => {
+								handleClick();
 								confirmacion();
 							}}
 							className="btn btn-dark"
