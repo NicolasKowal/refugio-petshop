@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const GuardarStorage = (array, nombre) => {
 	const listaJSON = JSON.stringify(array);
-	sessionStorage.setItem(nombre, listaJSON);
+	localStorage.setItem(nombre, listaJSON);
 };
 
 function Cart() {

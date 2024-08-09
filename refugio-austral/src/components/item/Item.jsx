@@ -5,7 +5,7 @@ import "./item.css";
 
 const GuardarStorage = (array, nombre) => {
 	const listaJSON = JSON.stringify(array);
-	sessionStorage.setItem(nombre, listaJSON);
+	localStorage.setItem(nombre, listaJSON);
 };
 
 function Item({ id, nombre, precio, imagen, stock }) {

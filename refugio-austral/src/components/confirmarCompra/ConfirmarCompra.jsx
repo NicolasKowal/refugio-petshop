@@ -26,12 +26,7 @@ function ConfirmarCompra() {
 		0
 	);
 
-	const handleChange = () => {
-		setName(nombre.current.value);
-		setLastname(apellido.current.value);
-		setPhone(telefono.current.value);
-		setMail(email.current.value);
-	};
+	const handleChange = () => {};
 
 	const cargarCompra = () => {
 		setDatosDeUsuario({

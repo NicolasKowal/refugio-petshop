@@ -5,10 +5,10 @@ export const ShopList = createContext();
 export const ShopListProvider = ({ children }) => {
 	const [carrito, setCarrito] = useState([]);
 	useEffect(() => {
-		const CantidadJSON = sessionStorage.getItem("carrito");
-		if (CantidadJSON) {
-			const Cantidad = JSON.parse(CantidadJSON);
-			setCarrito(Cantidad);
+		const arrayJSON = localStorage.getItem("carrito");
+		if (arrayJSON) {
+			const array = JSON.parse(arrayJSON);
+			setCarrito(array);
 		}
 	}, []);
 
