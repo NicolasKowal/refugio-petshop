@@ -1,21 +1,25 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useState } from "react";
 import { ShopList } from "../../context";
 import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./confirmarCompra.css";
+const GuardarStorage = (array, nombre) => {
+	const listaJSON = JSON.stringify(array);
+	localStorage.setItem(nombre, listaJSON);
+};
 
 function ConfirmarCompra() {
 	const [name, setName] = useState("");
 	const [lastname, setLastname] = useState("");
 	const [phone, setPhone] = useState(0);
 	const [mail, setMail] = useState("");
-
 	const [datosDeUsuario, setDatosDeUsuario] = useState({});
-	const [compraFinal, setCompraFinal] = useState({});
 
 	const { carrito, setCarrito } = useContext(ShopList);
+	const { compraFinal, setCompraFinal } = useContext(ShopList);
+
 	const precioFinal = carrito.reduce(
 		(accumulator, elemento) => accumulator + elemento.total,
 		0
@@ -36,6 +40,8 @@ function ConfirmarCompra() {
 		};
 		setDatosDeUsuario(datosDeUsuarioACargar);
 		setCompraFinal(compraFinalACargar);
+
+		GuardarStorage(compraFinalACargar, "datoscompra");
 
 		const db = getFirestore();
 		const orderCollection = collection(db, "ordenes");
@@ -118,9 +124,13 @@ function ConfirmarCompra() {
 				</div>
 			</form>
 			<br />
-			<button onClick={cargarCompra} className="btn btn-dark">
+			<Link
+				to={`/compra-finalizada`}
+				onClick={cargarCompra}
+				className="btn btn-dark"
+			>
 				Siguiente
-			</button>
+			</Link>
 			<br />
 		</div>
 	);

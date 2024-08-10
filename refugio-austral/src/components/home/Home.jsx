@@ -84,6 +84,7 @@ function Home() {
 			<div className="productosMasVendidos d-flex align-items-center justify-content-around w-90 mx-auto">
 				{productosV.map((elemento) => (
 					<Item
+						key={elemento.id}
 						nombre={elemento.nombre}
 						precio={elemento.precio}
 						imagen={elemento.imagen}

@@ -8,6 +8,7 @@ import ComoComprar from "./components/comoComprar/ComoComprar";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import ProductDetail from "./components/productDetail/ProductDetail";
 import ConfirmarCompra from "./components/confirmarCompra/ConfirmarCompra";
+import FinalizarCompra from "./components/finalizarCompra/FinalizarCompra";
 
 function App() {
 	return (
@@ -32,6 +33,7 @@ function App() {
 					/>
 					<Route path="*" element={<NoPage />} />
 					<Route path="/confirmar-compra" element={<ConfirmarCompra />} />
+					<Route path="/compra-finalizada" element={<FinalizarCompra />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
