@@ -7,15 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./confirmarCompra.css";
 
 function ConfirmarCompra() {
-	const nombre = useRef();
-	const apellido = useRef();
-	const email = useRef();
-	const telefono = useRef();
-
-	const [name, setName] = useState("n");
-	const [lastname, setLastname] = useState("l");
+	const [name, setName] = useState("");
+	const [lastname, setLastname] = useState("");
 	const [phone, setPhone] = useState(0);
-	const [mail, setMail] = useState("n");
+	const [mail, setMail] = useState("");
 
 	const [datosDeUsuario, setDatosDeUsuario] = useState({});
 	const [compraFinal, setCompraFinal] = useState({});
@@ -26,24 +21,27 @@ function ConfirmarCompra() {
 		0
 	);
 
-	const handleChange = () => {};
-
 	const cargarCompra = () => {
-		setDatosDeUsuario({
-			nombre: nombre.current.value,
-			apellido: apellido.current.value,
-			telefono: telefono.current.value,
-			mail: email.current.value,
-		});
-		setCompraFinal({
-			comprador: datosDeUsuario,
+		const datosDeUsuarioACargar = {
+			nombre: name,
+			apellido: lastname,
+			telefono: phone,
+			mail: mail,
+		};
+
+		const compraFinalACargar = {
+			comprador: datosDeUsuarioACargar,
 			carrito: carrito,
 			total: precioFinal,
-		});
+		};
+		setDatosDeUsuario(datosDeUsuarioACargar);
+		setCompraFinal(compraFinalACargar);
 
 		const db = getFirestore();
 		const orderCollection = collection(db, "ordenes");
-		addDoc(orderCollection, compraFinal).then(({ id }) => setOrderId(id));
+		addDoc(orderCollection, compraFinalACargar).then(({ id }) =>
+			setOrderId(id)
+		);
 	};
 
 	return (
@@ -85,41 +83,37 @@ function ConfirmarCompra() {
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>Nombre</legend>
 					<input
-						onChange={handleChange}
+						onChange={(e) => setName(e.target.value)}
 						type="text"
 						name="name"
 						placeholder="Nombre"
-						ref={nombre}
 					/>
 				</div>
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>Apellido</legend>
 					<input
-						onChange={handleChange}
+						onChange={(e) => setLastname(e.target.value)}
 						name="last_name"
 						type="text"
 						placeholder="Apellido"
-						ref={apellido}
 					/>
 				</div>
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>E-Mail</legend>
 					<input
-						onChange={handleChange}
+						onChange={(e) => setMail(e.target.value)}
 						type="text"
 						name="email"
 						placeholder="Email"
-						ref={email}
 					/>
 				</div>
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>Telefono</legend>
 					<input
-						onChange={handleChange}
+						onChange={(e) => setPhone(e.target.value)}
 						name="phone"
 						type="text"
 						placeholder="Telefono"
-						ref={telefono}
 					/>
 				</div>
 			</form>
