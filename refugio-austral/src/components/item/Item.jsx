@@ -11,9 +11,13 @@ const GuardarStorage = (array, nombre) => {
 function Item({ id, nombre, precio, imagen, stock }) {
 	const [cantidad, setCantidad] = useState(0);
 	const { carrito, setCarrito } = useContext(ShopList);
+	const [texto, setTexto] = useState("Agregar al carrito");
+	const [estilo, setEstilo] = useState({});
 
 	const HandleClick = (nombre, cantidad) => {
 		if (cantidad !== 0) {
+			setTexto("Agregado correctamente");
+			setEstilo({ background: "green" });
 			let buscarEnArray = carrito.findIndex((x) => x.id === id);
 			if (buscarEnArray === -1) {
 				const total = cantidad * precio;
@@ -65,12 +69,13 @@ function Item({ id, nombre, precio, imagen, stock }) {
 						</div>
 						<div className="agregarAlCarrito">
 							<button
+								style={estilo}
 								className="btn btn-dark"
 								onClick={() => {
 									HandleClick(nombre, cantidad);
 								}}
 							>
-								Agregar al carrito
+								{texto}
 							</button>
 						</div>
 					</div>
