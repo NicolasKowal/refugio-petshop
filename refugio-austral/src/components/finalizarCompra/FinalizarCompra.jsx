@@ -68,7 +68,7 @@ function FinalizarCompra() {
 			<h3 className="d-flex align-items-center justify-content-center">
 				$ {datos.total}
 			</h3>
-			<Link to={"/"} onClick={handleClick}>
+			<Link className="btn btn-dark" to={"/"} onClick={handleClick}>
 				Home
 			</Link>
 		</div>
