@@ -35,53 +35,51 @@ function Item({ id, nombre, precio, imagen, stock }) {
 		}
 	};
 	return (
-		<>
-			<div className="card">
-				<Link className="img-contenedor" to={`producto/${id}`}>
-					<img className="prod-img" src={imagen} alt={imagen} />
-				</Link>
-				<div className="card-body">
-					<h5>{nombre}</h5>
-					<p>${precio}</p>
-					<div className="divCompra">
-						<div className="selectorCantidad">
-							<button
-								className="btn"
-								onClick={() => {
-									if (cantidad !== 0) {
-										setCantidad(cantidad - 1);
-									}
-								}}
-							>
-								-
-							</button>
-							<p className="d-flex align-items-center">{cantidad}</p>
-							<button
-								className="btn"
-								onClick={() => {
-									if (cantidad < stock) {
-										setCantidad(cantidad + 1);
-									}
-								}}
-							>
-								+
-							</button>
-						</div>
-						<div className="agregarAlCarrito">
-							<button
-								style={estilo}
-								className="btn btn-dark"
-								onClick={() => {
-									HandleClick(nombre, cantidad);
-								}}
-							>
-								{texto}
-							</button>
-						</div>
+		<div className="card">
+			<Link className="img-contenedor" to={`producto/${id}`}>
+				<img className="prod-img" src={imagen} alt={imagen} />
+			</Link>
+			<div className="card-body">
+				<h5>{nombre}</h5>
+				<p>${precio}</p>
+				<div className="divCompra">
+					<div className="selectorCantidad">
+						<button
+							className="btn"
+							onClick={() => {
+								if (cantidad !== 0) {
+									setCantidad(cantidad - 1);
+								}
+							}}
+						>
+							-
+						</button>
+						<p className="d-flex align-items-center">{cantidad}</p>
+						<button
+							className="btn"
+							onClick={() => {
+								if (cantidad < stock) {
+									setCantidad(cantidad + 1);
+								}
+							}}
+						>
+							+
+						</button>
+					</div>
+					<div className="agregarAlCarrito">
+						<button
+							style={estilo}
+							className="btn btn-dark"
+							onClick={() => {
+								HandleClick(nombre, cantidad);
+							}}
+						>
+							{texto}
+						</button>
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

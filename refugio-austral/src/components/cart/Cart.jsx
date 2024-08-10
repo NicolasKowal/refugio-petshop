@@ -89,8 +89,13 @@ function Cart() {
 					{carrito.length === 0 ? (
 						<button disabled>Finalizar compra</button>
 					) : (
-						<Link style={estilo} onClick={handleClick} to="confirmar-compra">
-							<button className="btn btn-dark">Finalizar compra</button>
+						<Link
+							style={estilo}
+							onClick={handleClick}
+							className="btn btn-dark"
+							to="confirmar-compra"
+						>
+							Finalizar compra
 						</Link>
 					)}
 					{carrito.length > 0 ? (
