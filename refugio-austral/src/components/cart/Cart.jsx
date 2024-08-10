@@ -37,11 +37,10 @@ function Cart() {
 	};
 
 	const deleteHandleClick = (id) => {
-		setCarrito(carrito.filter((elemento) => elemento.id !== id));
+		const carritoActualizado = carrito.filter((elemento) => elemento.id !== id);
+		setCarrito(carritoActualizado);
+		GuardarStorage(carritoActualizado, "carrito");
 	};
-
-	const carritoEliminado = [...carrito];
-	GuardarStorage(carritoEliminado, "carrito");
 
 	const compra = {
 		background: "var(--color-quinto)",
