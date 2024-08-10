@@ -1,0 +1,9 @@
+.datofinal {
+	background: var(--color-secundario);
+	color: var(--color-texto);
+	min-height: 750px;
+	padding-inline: 30px;
+}
+.datofinal p {
+	font-size: 1.2em;
+}

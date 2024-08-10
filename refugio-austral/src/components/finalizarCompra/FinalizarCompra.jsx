@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { ShopList } from "../../context";
 import "./finalizarCompra.css";
 
 function FinalizarCompra() {
-	const { compraFinal } = useContext(ShopList);
+	const { setCarrito, setCompraFinal, compraFinal } = useContext(ShopList);
 	const [datos, setDatos] = useState(null);
 	const [loading, setLoading] = useState(true);
 
@@ -24,28 +25,36 @@ function FinalizarCompra() {
 		return <div>No hay datos disponibles para mostrar.</div>;
 	}
 
+	function handleClick() {
+		setCarrito([]);
+		setCompraFinal({});
+		localStorage.removeItem("carrito");
+		localStorage.removeItem("datoscompra");
+	}
 	return (
-		<div>
-			<h2 className="d-flex justify-content-center">Datos de facturacion</h2>
-			<div className="datosUsuario container">
+		<div className="datofinal">
+			<br />
+			<h2 className="titulo">Datos de facturacion</h2>
+			<div className="datosUsuario container d-flex flex-column">
 				<div className="row">
-					<legend className="col-2">Nombre</legend>
-					<p className="col-10">{datos.comprador.nombre}</p>
+					<p className="col-6">Nombre</p>
+					<p className="col-6">{datos.comprador.nombre}</p>
 				</div>
 				<div className="row">
-					<legend className="col-2">Apellido</legend>
-					<p className="col-10">{datos.comprador.apellido}</p>
+					<p className="col-6">Apellido</p>
+					<p className="col-6">{datos.comprador.apellido}</p>
 				</div>
 				<div className="row">
-					<legend className="col-2">Telefono</legend>
-					<p className="col-10">{datos.comprador.telefono}</p>
+					<p className="col-6">Telefono</p>
+					<p className="col-6">{datos.comprador.telefono}</p>
 				</div>
 				<div className="row">
-					<legend className="col-2">Email</legend>
-					<p className="col-10">{datos.comprador.mail}</p>
+					<p className="col-6">Email</p>
+					<p className="col-6">{datos.comprador.mail}</p>
 				</div>
 			</div>
-			<h2 className="d-flex justify-content-center">Tu carrito</h2>
+			<br />
+			<h2 className="titulo">Tu carrito</h2>
 			<div className="container">
 				{datos.carrito.map((item) => (
 					<div className="row" key={item.id}>
@@ -54,8 +63,14 @@ function FinalizarCompra() {
 					</div>
 				))}
 			</div>
-			<h2 className="d-flex justify-content-center">Total</h2>
-			<h3 className="total">$ {datos.total}</h3>
+			<br />
+			<h2 className="titulo">Total</h2>
+			<h3 className="d-flex align-items-center justify-content-center">
+				$ {datos.total}
+			</h3>
+			<Link to={"/"} onClick={handleClick}>
+				Home
+			</Link>
 		</div>
 	);
 }
