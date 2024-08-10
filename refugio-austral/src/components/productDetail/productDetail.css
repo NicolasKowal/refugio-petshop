@@ -1,12 +1,14 @@
 .container-producto {
-	min-height: 660px;
+	min-height: 750px;
+	background: var(--color-secundario);
+	color: var(--color-texto);
 }
 .detalleProducto {
-	background: whitesmoke;
-	margin: 50px auto;
-	width: 700px;
+	background: var(--color-terciario);
+	width: 50%;
 	display: flex;
 	flex-direction: column;
+	margin: 0 auto;
 }
 .detalleProducto h2,
 h3 {
@@ -23,4 +25,7 @@ h3 {
 }
 .detalleProducto p {
 	font-size: 1.5em;
+}
+.container-producto a {
+	text-decoration: none;
 }

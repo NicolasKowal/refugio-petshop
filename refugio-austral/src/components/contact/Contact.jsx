@@ -61,10 +61,10 @@ function Contacto() {
 					></textarea>
 				</div>
 				<div className="d-flex justify-content-around align-items-center botonera">
-					<button className="btn btn-primary" type="submit">
+					<button className="btn btn-dark" type="submit">
 						Enviar
 					</button>
-					<button className="btn btn-primary" type="reset">
+					<button className="btn btn-dark" type="reset">
 						Resetear
 					</button>
 				</div>
