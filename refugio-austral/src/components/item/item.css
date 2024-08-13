@@ -1,41 +1,48 @@
-.card {
+.cardContainer {
 	height: 400px;
 	width: 250px;
-	padding-top: 15px;
-	border-radius: 10px;
+}
+.card {
+	height: 100px;
 }
 .img-contenedor {
-	height: 40%;
+	height: 50%;
 	width: 100%;
 	display: flex;
 }
 .img-contenedor img {
 	border-radius: 5px;
-	width: 75%;
+	height: 90%;
 	aspect-ratio: 1/1;
 	margin: 0 auto;
 }
 .card-body {
-	height: 60%;
+	height: 25%;
 	width: 100%;
 	margin: 0 auto;
 }
 .card-body h5 {
-	height: 35%;
+	height: 60%;
 	width: 100%;
 	text-align: center;
 	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .card-body p {
-	height: 10%;
-	width: 75%;
+	height: 40%;
+	width: 100%;
 	margin: 0 auto;
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .divCompra {
-	height: 60%;
+	height: 25%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -46,9 +53,6 @@
 	width: 100%;
 }
 .selectorCantidad {
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	height: 50%;
 	width: 60%;
 }
@@ -56,17 +60,21 @@
 	font-size: 2em;
 	height: 100%;
 	background: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.selectorCantidad p {
+	margin: 0 auto;
+	height: 100%;
+	font-size: 1.5em;
 }
 .divCompra div {
 	display: flex;
 	align-items: center;
 }
-.divCompra p {
-	height: 100%;
-	font-size: 1.5em;
-	color: black;
-}
 .agregarAlCarrito button {
-	width: 100%;
+	margin: 0 auto;
+	width: 90%;
 	height: 80%;
 }

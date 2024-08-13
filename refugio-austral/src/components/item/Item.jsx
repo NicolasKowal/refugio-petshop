@@ -35,15 +35,17 @@ function Item({ id, nombre, precio, imagen, stock }) {
 		}
 	};
 	return (
-		<div className="card">
-			<Link className="img-contenedor" to={`producto/${id}`}>
-				<img className="prod-img" src={imagen} alt={imagen} />
-			</Link>
-			<div className="card-body">
-				<h5>{nombre}</h5>
-				<p>${precio}</p>
+		<div className="cardContainer">
+			<div className="card" style={{ height: "100%" }}>
+				<Link className="img-contenedor" to={`producto/${id}`}>
+					<img className="prod-img" src={imagen} alt={imagen} />
+				</Link>
+				<div className="card-body">
+					<h5>{nombre}</h5>
+					<p>${precio}</p>
+				</div>
 				<div className="divCompra">
-					<div className="selectorCantidad">
+					<div className="selectorCantidad d-flex align-items-center justify-content-center">
 						<button
 							className="btn"
 							onClick={() => {
