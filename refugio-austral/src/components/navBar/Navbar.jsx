@@ -41,7 +41,12 @@ function Navbar() {
 					<Link to="contacto">Contacto</Link>
 				</div>
 				<div className="cuadroBusqueda">
-					<input type="text" onChange={handleClick} ref={busqueda}></input>
+					<input
+						placeholder="Buscar..."
+						type="text"
+						onChange={handleClick}
+						ref={busqueda}
+					></input>
 					<Link to={`/busqueda/${valorBusqueda}`}>
 						<button>🔎</button>
 					</Link>
