@@ -34,6 +34,11 @@ function FinalizarCompra() {
 	return (
 		<div className="datofinal">
 			<br />
+			<h1 className="titulo">Felicidades, ¡ya es tuyo!</h1>
+			<h3 className="d-flex align-items-center justify-content-center">
+				En breves te llegara un mail con el detalle de compra
+			</h3>
+			<br />
 			<h2 className="titulo">Datos de facturacion</h2>
 			<div className="datosUsuario container d-flex flex-column">
 				<div className="row">
@@ -54,7 +59,8 @@ function FinalizarCompra() {
 				</div>
 			</div>
 			<br />
-			<h2 className="titulo">Tu carrito</h2>
+			<h2 className="titulo">Tu compra</h2>
+			<br />
 			<div className="container">
 				{datos.carrito.map((item) => (
 					<div className="row" key={item.id}>
@@ -68,9 +74,16 @@ function FinalizarCompra() {
 			<h3 className="d-flex align-items-center justify-content-center">
 				$ {datos.total}
 			</h3>
-			<Link className="btn btn-dark" to={"/"} onClick={handleClick}>
-				Home
-			</Link>
+			<div className="d-flex align-items-center justify-content-center ">
+				<Link
+					className="btn btn-dark btnFinalizar"
+					to={"/"}
+					onClick={handleClick}
+				>
+					Home
+				</Link>
+			</div>
+			<br />
 		</div>
 	);
 }

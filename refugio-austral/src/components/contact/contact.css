@@ -1,6 +1,7 @@
 .contacto {
 	background: var(--color-secundario);
 	color: var(--color-texto);
+	min-height: 100vh;
 }
 .container-redes {
 	display: flex;

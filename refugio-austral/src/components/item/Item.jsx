@@ -54,7 +54,9 @@ function Item({ id, nombre, precio, imagen, stock }) {
 						>
 							-
 						</button>
-						<p className="d-flex align-items-center">{cantidad}</p>
+						<p className="d-flex align-items-center justify-content-center">
+							{cantidad}
+						</p>
 						<button
 							className="btn"
 							onClick={() => {
@@ -67,15 +69,21 @@ function Item({ id, nombre, precio, imagen, stock }) {
 						</button>
 					</div>
 					<div className="agregarAlCarrito">
-						<button
-							style={estilo}
-							className="btn btn-dark"
-							onClick={() => {
-								HandleClick(nombre, cantidad);
-							}}
-						>
-							{texto}
-						</button>
+						{cantidad > 0 ? (
+							<button
+								style={estilo}
+								className="btn btn-dark"
+								onClick={() => {
+									HandleClick(nombre, cantidad);
+								}}
+							>
+								{texto}
+							</button>
+						) : (
+							<button disabled className="btn btn-dark">
+								{texto}
+							</button>
+						)}
 					</div>
 				</div>
 			</div>

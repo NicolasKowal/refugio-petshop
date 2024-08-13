@@ -11,6 +11,11 @@ function ProductDetail() {
 
 	const { id } = useParams();
 	const producto = Productos.find((elemento) => elemento.id === id);
+	const estilo = { minWidth: "100vh" };
+
+	if (loading) {
+		return <span style={estilo} className="loader" />;
+	}
 
 	if (error) {
 		return (
@@ -19,9 +24,7 @@ function ProductDetail() {
 			</div>
 		);
 	}
-	if (loading) {
-		return <span className="loader" />;
-	}
+
 	return (
 		<div className="container-producto">
 			<br />

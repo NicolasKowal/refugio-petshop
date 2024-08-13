@@ -53,9 +53,11 @@ function ConfirmarCompra() {
 	return (
 		<div className="containerCompra">
 			<br />
-			<Link to="/" className="d-flex justify-content-right">
-				<button className="btn btn-dark">Volver</button>
-			</Link>
+			<div className="d-flex justify-content-center">
+				<Link to="/" className="btn btn-dark botonConformarCompra">
+					Volver
+				</Link>
+			</div>
 			<br />
 			<h2 className="titulo">Tu compra</h2>
 			<br />
@@ -124,13 +126,15 @@ function ConfirmarCompra() {
 				</div>
 			</form>
 			<br />
-			<Link
-				to={`/compra-finalizada`}
-				onClick={cargarCompra}
-				className="btn btn-dark"
-			>
-				Siguiente
-			</Link>
+			<div className="d-flex justify-content-center">
+				<Link
+					to={`/compra-finalizada`}
+					onClick={cargarCompra}
+					className="btn btn-dark botonConformarCompra"
+				>
+					Siguiente
+				</Link>
+			</div>
 			<br />
 		</div>
 	);

@@ -21,14 +21,14 @@
 .sombra {
 	background: rgba(0, 0, 0, 0.555);
 	height: 1000px;
-	width: 400vh;
+	width: 100%;
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 0;
 }
 .compra {
-	min-height: 900px;
+	min-height: 90vh;
 	width: 30%;
 	border-radius: 5px;
 	position: absolute;

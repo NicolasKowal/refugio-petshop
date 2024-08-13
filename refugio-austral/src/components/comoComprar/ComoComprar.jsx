@@ -3,7 +3,7 @@ import "./comoComprar.css";
 
 function ComoComprar() {
 	return (
-		<div className="container">
+		<div className="container-compra">
 			<h2 className="heading">¿Cómo Comprar en Nuestra Tienda?</h2>
 
 			<section className="section">

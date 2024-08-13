@@ -1,7 +1,11 @@
+.botonConformarCompra {
+	margin: 0 auto;
+	width: 100px;
+}
 .containerCompra {
 	background: var(--color-secundario);
 	color: var(--color-texto);
-	min-height: 750px;
+	min-height: 100vh;
 	padding-inline: 30px;
 }
 .encabezado {
