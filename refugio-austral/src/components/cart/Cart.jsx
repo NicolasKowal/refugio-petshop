@@ -17,6 +17,7 @@ function Cart() {
 	const [xButton, setButton] = useState(false);
 	const [estilo, setEstilo] = useState({ display: "none" });
 	const { carrito, setCarrito } = useContext(ShopList);
+	const { shakeCarrito, setShakeCarrito } = useContext(ShopList);
 	const confirmacion = () => {
 		Swal.fire({
 			title: "¿Vaciar carrito de compras?",

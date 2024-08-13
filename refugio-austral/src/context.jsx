@@ -5,6 +5,7 @@ export const ShopList = createContext();
 export const ShopListProvider = ({ children }) => {
 	const [carrito, setCarrito] = useState([]);
 	const [compraFinal, setCompraFinal] = useState({});
+	const [shakeCarrito, setShakeCarrito] = useState(false);
 	useEffect(() => {
 		const arrayJSON = localStorage.getItem("carrito");
 		if (arrayJSON) {
@@ -21,7 +22,14 @@ export const ShopListProvider = ({ children }) => {
 
 	return (
 		<ShopList.Provider
-			value={{ carrito, setCarrito, compraFinal, setCompraFinal }}
+			value={{
+				carrito,
+				setCarrito,
+				compraFinal,
+				setCompraFinal,
+				shakeCarrito,
+				setShakeCarrito,
+			}}
 		>
 			{children}
 		</ShopList.Provider>

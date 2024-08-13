@@ -11,6 +11,7 @@ const GuardarStorage = (array, nombre) => {
 function Item({ id, nombre, precio, imagen, stock }) {
 	const [cantidad, setCantidad] = useState(0);
 	const { carrito, setCarrito } = useContext(ShopList);
+	const { shakeCarrito, setShakeCarrito } = useContext(ShopList);
 	const [texto, setTexto] = useState("Agregar al carrito");
 	const [estilo, setEstilo] = useState({});
 
