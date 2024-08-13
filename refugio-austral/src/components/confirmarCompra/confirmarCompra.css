@@ -1,6 +1,8 @@
 .botonConformarCompra {
-	margin: 0 auto;
 	width: 100px;
+}
+.divBoton {
+	width: 90%;
 }
 .containerCompra {
 	background: var(--color-secundario);
@@ -21,7 +23,7 @@
 	height: 40px;
 }
 .total {
-	height: 75px;
+	height: 50px;
 	width: 90%;
 	margin: 0 auto;
 	background: none;

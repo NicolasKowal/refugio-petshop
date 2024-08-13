@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import scrollToTop from "./scrollToTop";
 
+import scrollToTop from "./scrollToTop";
 import Organizacion from "./Organizacion";
 import Home from "./components/home/Home";
 import Contact from "./components/contact/Contact";
@@ -8,6 +8,8 @@ import NoPage from "./components/noPage/NoPage";
 import ComoComprar from "./components/comoComprar/ComoComprar";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import ProductDetail from "./components/productDetail/ProductDetail";
+
+import ComponenteCompra from "./ComponenteCompra";
 import ConfirmarCompra from "./components/confirmarCompra/ConfirmarCompra";
 import FinalizarCompra from "./components/finalizarCompra/FinalizarCompra";
 
@@ -37,6 +39,8 @@ function App() {
 							element={<ProductDetail />}
 						/>
 						<Route path="*" element={<NoPage />} />
+					</Route>
+					<Route path="/" element={<ComponenteCompra />}>
 						<Route path="/confirmar-compra" element={<ConfirmarCompra />} />
 						<Route path="/compra-finalizada" element={<FinalizarCompra />} />
 					</Route>
