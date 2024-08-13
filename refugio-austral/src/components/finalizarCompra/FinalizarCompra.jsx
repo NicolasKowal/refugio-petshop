@@ -35,6 +35,7 @@ function FinalizarCompra() {
 		<div className="datofinal">
 			<br />
 			<h1 className="titulo">Felicidades, ¡ya es tuyo!</h1>
+			<br />
 			<h3 className="d-flex align-items-center justify-content-center">
 				En breves te llegara un mail con el detalle de compra
 			</h3>
@@ -71,6 +72,7 @@ function FinalizarCompra() {
 			</div>
 			<br />
 			<h2 className="titulo">Total</h2>
+			<br />
 			<h3 className="d-flex align-items-center justify-content-center">
 				$ {datos.total}
 			</h3>

@@ -1,22 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ShopList } from "../../context";
 import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./confirmarCompra.css";
+import { Button } from "bootstrap";
+
 const GuardarStorage = (array, nombre) => {
 	const listaJSON = JSON.stringify(array);
 	localStorage.setItem(nombre, listaJSON);
 };
 
 function ConfirmarCompra() {
-	const [name, setName] = useState("");
-	const [lastname, setLastname] = useState("");
-	const [phone, setPhone] = useState(0);
-	const [mail, setMail] = useState("");
-	const [datosDeUsuario, setDatosDeUsuario] = useState({});
-
 	const { carrito, setCarrito } = useContext(ShopList);
 	const { compraFinal, setCompraFinal } = useContext(ShopList);
 
@@ -24,6 +20,38 @@ function ConfirmarCompra() {
 		(accumulator, elemento) => accumulator + elemento.total,
 		0
 	);
+	const [name, setName] = useState("");
+	const [lastname, setLastname] = useState("");
+	const [phone, setPhone] = useState("");
+	const [mail, setMail] = useState("");
+	const [datosDeUsuario, setDatosDeUsuario] = useState({});
+	const [orderId, setOrderId] = useState("");
+
+	const [habilitarBoton, setHabilitarBoton] = useState(true);
+
+	useEffect(() => {
+		const emailRegex = /\S+@\S+\.\S+/;
+		const phoneValid = phone.trim().length > 0 && !isNaN(phone);
+		const camposLlenos =
+			name.trim() !== "" &&
+			lastname.trim() !== "" &&
+			emailRegex.test(mail) &&
+			phoneValid;
+		setHabilitarBoton(!camposLlenos);
+	}, [name, lastname, mail, phone]);
+
+	const handleName = (e) => {
+		setName(e.target.value);
+	};
+	const handleLastName = (e) => {
+		setLastname(e.target.value);
+	};
+	const handleMail = (e) => {
+		setMail(e.target.value);
+	};
+	const handleTelefono = (e) => {
+		setPhone(e.target.value);
+	};
 
 	const cargarCompra = () => {
 		const datosDeUsuarioACargar = {
@@ -49,7 +77,6 @@ function ConfirmarCompra() {
 			setOrderId(id)
 		);
 	};
-
 	return (
 		<div className="containerCompra">
 			<br />
@@ -86,7 +113,7 @@ function ConfirmarCompra() {
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>Nombre</legend>
 					<input
-						onChange={(e) => setName(e.target.value)}
+						onChange={handleName}
 						type="text"
 						name="name"
 						placeholder="Nombre"
@@ -96,7 +123,7 @@ function ConfirmarCompra() {
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>Apellido</legend>
 					<input
-						onChange={(e) => setLastname(e.target.value)}
+						onChange={handleLastName}
 						name="last_name"
 						type="text"
 						placeholder="Apellido"
@@ -106,8 +133,8 @@ function ConfirmarCompra() {
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>E-Mail</legend>
 					<input
-						onChange={(e) => setMail(e.target.value)}
-						type="text"
+						onChange={handleMail}
+						type="email"
 						name="email"
 						placeholder="Email"
 						required
@@ -116,7 +143,7 @@ function ConfirmarCompra() {
 				<div className="d-flex align-items-center justify-content-around">
 					<legend>Telefono</legend>
 					<input
-						onChange={(e) => setPhone(e.target.value)}
+						onChange={handleTelefono}
 						name="phone"
 						type="text"
 						placeholder="Telefono"
@@ -129,14 +156,19 @@ function ConfirmarCompra() {
 				<Link to="/" className="btn btn-dark botonConformarCompra">
 					Volver
 				</Link>
-				<Link
-					type="submit"
-					to={`/compra-finalizada`}
-					onClick={cargarCompra}
-					className="btn btn-dark botonConformarCompra"
-				>
-					Siguiente
-				</Link>
+
+				{habilitarBoton == false ? (
+					<Link
+						type="submit"
+						onClick={cargarCompra}
+						className="btn btn-dark botonConformarCompra"
+						to={`/compra-finalizada`}
+					>
+						Siguiente
+					</Link>
+				) : (
+					<button className="btn btn-secondary disabled">Siguiente</button>
+				)}
 			</div>
 			<br />
 		</div>
