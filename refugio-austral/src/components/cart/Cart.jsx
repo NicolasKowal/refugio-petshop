@@ -9,17 +9,20 @@ import "./cart.css";
 import { Link } from "react-router-dom";
 
 const GuardarStorage = (array, nombre) => {
+	//se crea una fucnion para actualizar el storage
 	const listaJSON = JSON.stringify(array);
 	localStorage.setItem(nombre, listaJSON);
 };
 
 function Cart() {
 	const [xButton, setButton] = useState(false);
-	const [estilo, setEstilo] = useState({ display: "none" });
-	const { carrito, setCarrito } = useContext(ShopList);
-	const { shakeCarrito, setShakeCarrito } = useContext(ShopList);
+	const [estilo, setEstilo] = useState({ display: "none" }); //se va a usar para setear el carrito, si se ve o no
+	const { carrito, setCarrito } = useContext(ShopList); //se importa el contexto
+	const { shakeCarrito, setShakeCarrito } = useContext(ShopList); //se importa el contexto
 	const confirmacion = () => {
+		//
 		Swal.fire({
+			//se crea una ventana emergente para chequear que no se elimino sin querer
 			title: "¿Vaciar carrito de compras?",
 			icon: "question",
 			confirmButtonText: "Vaciar",
@@ -38,12 +41,14 @@ function Cart() {
 	};
 
 	const deleteHandleClick = (id) => {
+		//se elimina un item del carrito pisando el carrito original pero filtrando que no tenga el id
 		const carritoActualizado = carrito.filter((elemento) => elemento.id !== id);
 		setCarrito(carritoActualizado);
 		GuardarStorage(carritoActualizado, "carrito");
 	};
 
 	const compra = {
+		//cambia el color del numero del carrito cuando es mayor a 0
 		background: "var(--color-quinto)",
 		color: "black",
 	};
@@ -88,7 +93,7 @@ function Cart() {
 				</div>
 				<div className="finalizarCompra d-flex align-items-center justify-content-around">
 					{carrito.length === 0 ? (
-						<button disabled>Finalizar compra</button>
+						<button disabled>Finalizar compra</button> //deshabilita el oton si el contador esta en 0
 					) : (
 						<Link
 							style={estilo}
@@ -99,7 +104,7 @@ function Cart() {
 							Finalizar compra
 						</Link>
 					)}
-					{carrito.length > 0 ? (
+					{carrito.length > 0 ? ( //el boton se va a mostrar solo si hay items
 						<button
 							style={estilo}
 							onClick={() => {

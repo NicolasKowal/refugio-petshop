@@ -15,9 +15,11 @@ function ItemList() {
 	const { Productos, loading, error } = customHookFirebase("items");
 
 	let ProductosAMostrar = [];
+	//con estos 3 useparams, simplifique tener 1 componente para buscar, seleccionar categorias o buscar
 	if (categoria === "Todos") {
 		ProductosAMostrar = [...Productos];
 	} else if (!categoria && !animal) {
+		//filtra por tags las palabras de busqueda
 		ProductosAMostrar = Productos.filter((producto) =>
 			producto.tags.includes(busqueda)
 		);
@@ -30,11 +32,11 @@ function ItemList() {
 		}
 	} else if (!categoria && !busqueda) {
 		ProductosAMostrar = Productos.filter(
-			(producto) => producto.tags && producto.tags.includes(animal)
+			(producto) => producto.tags && producto.tags.includes(animal) //busca en tags el animal para filtrar
 		);
 	} else if (!animal && !busqueda) {
 		ProductosAMostrar = Productos.filter(
-			(producto) => producto.categoria === categoria
+			(producto) => producto.categoria === categoria //filtra por categoria
 		);
 	}
 	if (loading) {
@@ -42,15 +44,6 @@ function ItemList() {
 	}
 	if (error) {
 		return <p>error</p>;
-	}
-	if (busqueda == null) {
-		return (
-			<>
-				<h1 className="d-flex align-items-center justify-content-center">
-					Busqueda en blanco
-				</h1>
-			</>
-		);
 	}
 	return (
 		<div className="grid-container">

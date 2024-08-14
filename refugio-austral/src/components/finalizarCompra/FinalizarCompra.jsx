@@ -22,6 +22,7 @@ function FinalizarCompra() {
 	}
 
 	if (!datos || !datos.comprador || !datos.carrito) {
+		//valida que haya datos y no crashee
 		return <div>No hay datos disponibles para mostrar.</div>;
 	}
 
@@ -85,6 +86,7 @@ function FinalizarCompra() {
 					Home
 				</Link>
 			</div>
+			{/* redirecciona al home y borra todos los datos de compra y carrito */}
 			<br />
 		</div>
 	);

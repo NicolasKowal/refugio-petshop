@@ -5,7 +5,6 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./confirmarCompra.css";
-import { Button } from "bootstrap";
 
 const GuardarStorage = (array, nombre) => {
 	const listaJSON = JSON.stringify(array);
@@ -13,10 +12,11 @@ const GuardarStorage = (array, nombre) => {
 };
 
 function ConfirmarCompra() {
-	const { carrito, setCarrito } = useContext(ShopList);
-	const { compraFinal, setCompraFinal } = useContext(ShopList);
+	const { carrito, setCarrito } = useContext(ShopList); //se importa el context
+	const { compraFinal, setCompraFinal } = useContext(ShopList); //se importa el context
 
 	const precioFinal = carrito.reduce(
+		//mediante el reduce, se crea una constante con la suma de todos los items
 		(accumulator, elemento) => accumulator + elemento.total,
 		0
 	);
@@ -30,8 +30,8 @@ function ConfirmarCompra() {
 	const [habilitarBoton, setHabilitarBoton] = useState(true);
 
 	useEffect(() => {
-		const emailRegex = /\S+@\S+\.\S+/;
-		const phoneValid = phone.trim().length > 0 && !isNaN(phone);
+		const emailRegex = /\S+@\S+\.\S+/; //chequea que el mail sea valido
+		const phoneValid = phone.trim().length > 0 && !isNaN(phone); //chequea que el numero de telefono sea un numero y mayor a 0
 		const camposLlenos =
 			name.trim() !== "" &&
 			lastname.trim() !== "" &&
@@ -69,7 +69,7 @@ function ConfirmarCompra() {
 		setDatosDeUsuario(datosDeUsuarioACargar);
 		setCompraFinal(compraFinalACargar);
 
-		GuardarStorage(compraFinalACargar, "datoscompra");
+		GuardarStorage(compraFinalACargar, "datoscompra"); //se carga en el storage los datos para levantarlos en la finalizacion de la compra
 
 		const db = getFirestore();
 		const orderCollection = collection(db, "ordenes");
@@ -156,7 +156,6 @@ function ConfirmarCompra() {
 				<Link to="/" className="btn btn-dark botonConformarCompra">
 					Volver
 				</Link>
-
 				{habilitarBoton == false ? (
 					<Link
 						type="submit"
@@ -167,7 +166,7 @@ function ConfirmarCompra() {
 						Siguiente
 					</Link>
 				) : (
-					<button className="btn btn-secondary disabled">Siguiente</button>
+					<button className="btn btn-secondary disabled">Siguiente</button> //el boton se va a habilitar si solo si estan todos los campos completos
 				)}
 			</div>
 			<br />

@@ -18,7 +18,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 	const HandleClick = (nombre, cantidad) => {
 		if (cantidad !== 0) {
 			setTexto("Agregado correctamente");
-			setEstilo({ background: "green" });
+			setEstilo({ background: "green" }); //cambia a verde el boton para que el usuario sepa que se agrego
 			let buscarEnArray = carrito.findIndex((x) => x.id === id);
 			if (buscarEnArray === -1) {
 				const total = cantidad * precio;
@@ -38,6 +38,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 	return (
 		<div className="cardContainer">
 			<div className="card" style={{ height: "100%" }}>
+				{/*setea el 100% de la ventana porque no puedo manejar el tamaño por css */}
 				<Link className="img-contenedor" to={`producto/${id}`}>
 					<img className="prod-img" src={imagen} alt={imagen} />
 				</Link>
@@ -72,6 +73,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 						</button>
 					</div>
 					<div className="agregarAlCarrito">
+						{/*el boton se va amostrar solamente si la cantidad es mayor a 0 */}
 						{cantidad > 0 ? (
 							<button
 								style={estilo}
