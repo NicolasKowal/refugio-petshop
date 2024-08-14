@@ -1,36 +1,52 @@
 .container-compra {
+	min-height: 100vh;
 	padding: 20px;
 	font-family: Arial, sans-serif;
-	min-height: 100vh;
+	background: var(--color-secundario);
+	color: var(--color-texto);
 }
 
 .heading {
-	font-size: 24px;
-	margin-bottom: 20px;
+	background: var(--color-cuaternario);
+	width: 50%;
+	margin-bottom: 50px;
+	height: 100px;
+	letter-spacing: 5px;
+	border-radius: 10px;
 }
 
 .section {
-	margin-bottom: 20px;
+	height: 150px;
+}
+.section:nth-child(6) {
+	height: 300px;
+}
+.section:nth-child(7) {
+	height: 600px;
 }
 
 .subheading {
+	background: var(--color-terciario);
 	font-size: 20px;
-	margin-bottom: 10px;
+	width: 20%;
+	height: 50px;
+	border-radius: 10px;
 }
 
 .text {
-	font-size: 16px;
+	align-items: center;
+	height: 75px;
+	font-size: 1.1em;
 	line-height: 1.5;
 }
 
-.list {
-	padding-left: 20px;
+.list li {
+	list-style: none;
+	margin-block: 5px;
+	padding-left: 50px;
 }
-
-.qrCode {
-	display: flex;
-	justify-content: center;
-	margin-top: 10px;
+.list li::before {
+	content: "=> ";
 }
 
 .qrImage {

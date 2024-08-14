@@ -43,6 +43,15 @@ function ItemList() {
 	if (error) {
 		return <p>error</p>;
 	}
+	if (busqueda == null) {
+		return (
+			<>
+				<h1 className="d-flex align-items-center justify-content-center">
+					Busqueda en blanco
+				</h1>
+			</>
+		);
+	}
 	return (
 		<div className="grid-container">
 			{ProductosAMostrar.map((producto) => (

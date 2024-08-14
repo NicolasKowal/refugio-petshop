@@ -28,6 +28,7 @@
 	align-items: center;
 	justify-content: center;
 	letter-spacing: 3px;
+	border-radius: 10px;
 	background: var(--color-terciario);
 	color: var(--color-texto);
 }

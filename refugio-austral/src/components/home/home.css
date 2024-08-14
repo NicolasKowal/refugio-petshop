@@ -3,13 +3,14 @@ main {
 	min-height: 100%;
 }
 .container-img {
-	margin: 0 auto;
 	height: 350px;
 	width: 90%;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
+	border-radius: 10px;
 	background: var(--color-cuaternario);
+}
+.container-img a {
+	text-decoration: none;
+	color: var(--color-texto);
 }
 .container-img a img {
 	height: 250px;
@@ -25,6 +26,7 @@ main {
 .productosMasVendidos {
 	width: 90%;
 	height: 450px;
+	border-radius: 10px;
 	background: var(--color-terciario);
 }
 .suscribe {
@@ -51,4 +53,5 @@ main {
 	width: 50%;
 	margin-right: 10px;
 	border-radius: 10px;
+	padding-left: 10px;
 }

@@ -20,7 +20,7 @@ function Home() {
 			<br />
 			<h3 className="titulo">Todo lo que tu mascota necesite</h3>
 			<br />
-			<div className="container-img">
+			<div className="container-img d-flex align-items-center justify-content-around mx-auto">
 				<Link
 					className="d-flex flex-column justify-content-center align-items-center"
 					to={`/perro`}
@@ -30,7 +30,7 @@ function Home() {
 						src="https://img.freepik.com/foto-gratis/disparo-vertical-hermoso-cachorro-labrador-chocolate-pared-blanca_181624-44209.jpg?semt=sph"
 						alt="perro"
 					/>
-					<h5 className="p-3">Perros</h5>
+					<h4 className="p-3">Perros</h4>
 				</Link>
 				<Link
 					className="d-flex flex-column justify-content-center align-items-center"
@@ -41,7 +41,7 @@ function Home() {
 						src="https://img.freepik.com/foto-gratis/closeup-foto-hermoso-gatito-domestico-jengibre-sentado-sobre-superficie-blanca_181624-35913.jpg?semt=sph"
 						alt="gato"
 					/>
-					<h5 className="p-3">Gatos</h5>
+					<h4 className="p-3">Gatos</h4>
 				</Link>
 				<Link
 					className="d-flex flex-column justify-content-center align-items-center"
@@ -52,7 +52,7 @@ function Home() {
 						src="https://img.freepik.com/vector-gratis/hermoso-colibri-volando-elemento-diseno-pancartas-carteles-folletos-folletos_1262-13457.jpg?semt=sph"
 						alt="pajaro"
 					/>
-					<h5 className="p-3">Aves</h5>
+					<h4 className="p-3">Aves</h4>
 				</Link>
 				<Link
 					className="d-flex flex-column justify-content-center align-items-center"
@@ -63,7 +63,7 @@ function Home() {
 						src="https://img.freepik.com/foto-gratis/lagarto-gecko-naranja-sobre-fondo-blanco_488145-1992.jpg?semt=sph"
 						alt="reptil"
 					/>
-					<h5 className="p-3">Reptiles</h5>
+					<h4 className="p-3">Reptiles</h4>
 				</Link>
 				<Link
 					className="d-flex flex-column justify-content-center align-items-center"
@@ -74,7 +74,7 @@ function Home() {
 						src="https://img.freepik.com/foto-gratis/conejo-adorable-fondo-blanco_1232-462.jpg?semt=sph"
 						alt="conejo"
 					/>
-					<h5 className="p-3">Conejo</h5>
+					<h4 className="p-3">Conejo</h4>
 				</Link>
 			</div>
 			<br />
@@ -104,7 +104,7 @@ function Home() {
 						Suscribite para recibir todos los descuentos y sorteos
 					</h3>
 				</div>
-				<div className="d-flex align-items-center justify-content-start">
+				<div className="d-flex align-items-center justify-content-center">
 					<input type="text" className="text" />
 					<button type="submit" className="btn btn-dark">
 						Suscribirse
