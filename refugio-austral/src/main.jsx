@@ -5,8 +5,10 @@ import "./index.css";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+const KEY = import.meta.env.VITE_KEY;
+
 const firebaseConfig = {
-	apiKey: "AIzaSyBCeeul0iuroblYpkYkmwIBL20KxGLnsLM",
+	apiKey: KEY,
 	authDomain: "refugio-austral.firebaseapp.com",
 	projectId: "refugio-austral",
 	storageBucket: "refugio-austral.appspot.com",

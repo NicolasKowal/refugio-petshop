@@ -32,3 +32,4 @@ function customHookFirebase(coleccion) {
 }
 
 export default customHookFirebase;
+/* el hook devuelve un array un estado de loading y un error */

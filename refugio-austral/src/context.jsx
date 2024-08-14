@@ -35,3 +35,6 @@ export const ShopListProvider = ({ children }) => {
 		</ShopList.Provider>
 	);
 };
+{
+	/* se crea un contexto para poder usar el carrito y la animacion del carrito de compras, ademas de apenas entre a la pagina, obtener el localstorage */
+}

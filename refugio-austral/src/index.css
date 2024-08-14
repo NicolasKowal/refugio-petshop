@@ -1,3 +1,4 @@
+/* se define la paleta de colores */
 :root {
 	--color-primario: #2b193d;
 	--color-secundario: #2c365e;
@@ -33,5 +34,5 @@
 	color: var(--color-texto);
 }
 .loadingStyle {
-	min-height: 600px;
+	min-height: 100vh;
 }

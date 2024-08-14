@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import scrollToTop from "./scrollToTop";
+import Scroll from "./Scroll";
 import Organizacion from "./Organizacion";
 import Home from "./components/home/Home";
 import Contact from "./components/contact/Contact";
@@ -16,7 +16,8 @@ import FinalizarCompra from "./components/finalizarCompra/FinalizarCompra";
 function App() {
 	return (
 		<BrowserRouter>
-			<scrollToTop>
+			<>
+				{/*hace que todos los links empiecen en el top*/}
 				<Routes>
 					<Route exact path="/" element={<Organizacion />}>
 						<Route index element={<Home />} />
@@ -41,11 +42,12 @@ function App() {
 						<Route path="*" element={<NoPage />} />
 					</Route>
 					<Route path="/" element={<ComponenteCompra />}>
+						{/*aca tenemos 2 rutas por separado para que solo pueda comprar y no navegar rompiendo el carrito */}
 						<Route path="/confirmar-compra" element={<ConfirmarCompra />} />
 						<Route path="/compra-finalizada" element={<FinalizarCompra />} />
 					</Route>
 				</Routes>
-			</scrollToTop>
+			</>
 		</BrowserRouter>
 	);
 }
