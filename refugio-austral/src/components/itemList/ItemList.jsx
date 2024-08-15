@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./itemList.css";
 
 function ItemList() {
+	window.scrollTo(0, 0);
 	const { categoria } = useParams();
 	const { animal } = useParams();
 	const { busqueda } = useParams();

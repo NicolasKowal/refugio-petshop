@@ -9,6 +9,7 @@ import "./home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
+	window.scrollTo(0, 0);
 	const { Productos, loading, error } = customHookFirebase("items");
 
 	let productosV = Productos.filter((producto) => producto.stock < 20);

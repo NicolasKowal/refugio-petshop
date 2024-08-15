@@ -4,6 +4,7 @@ import "./contact.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Contacto() {
+	window.scrollTo(0, 0);
 	return (
 		<div className="contacto">
 			<br />
