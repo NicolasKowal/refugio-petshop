@@ -49,6 +49,7 @@ main {
 	height: 200px;
 	position: relative;
 	bottom: 50px;
+	filter: drop-shadow(15px 15px 10px var(--color-secundario));
 }
 .suscribe div input {
 	width: 50%;

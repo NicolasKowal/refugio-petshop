@@ -37,6 +37,7 @@
 .loadingStyle {
 	min-height: 100vh;
 }
+
 input {
 	background: var(--color-in);
 }
