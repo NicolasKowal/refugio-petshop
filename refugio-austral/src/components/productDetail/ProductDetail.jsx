@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import customHookFirebase from "../../customHookFirebase";
@@ -42,7 +42,7 @@ function ProductDetail() {
 			</div>
 			<div className="p-3 d-flex align-items-center justify-content-center">
 				<Link to={"/productos/Todos"}>
-					<button className="btn btn-secondary">Volver</button>
+					<button className="btn btn-secondary btnSombra">Volver</button>
 				</Link>
 			</div>
 		</div>

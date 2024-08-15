@@ -91,11 +91,17 @@ function Cart() {
 								className="row-12 d-flex align-items-center justify-content-center"
 								key={elemento.id}
 							>
-								<p className="col-1">{elemento.cantidad}</p>
-								<p className="col-6">{elemento.nombre}</p>
-								<p className="col-3">$ {elemento.total}</p>
+								<p className="col-1 d-flex align-items-center">
+									{elemento.cantidad}
+								</p>
+								<p className="col-6 d-flex align-items-center">
+									{elemento.nombre}
+								</p>
+								<p className="col-3 d-flex align-items-center">
+									$ {elemento.total}
+								</p>
 								<button
-									className="col-2 btn btn-dark d-flex align-items-center justify-content-center m-0"
+									className="col-2 btn btn-secondary btnSombra d-flex align-items-center justify-content-center m-0"
 									onClick={() => {
 										deleteHandleClick(elemento.id);
 									}}
@@ -113,7 +119,7 @@ function Cart() {
 						<Link
 							style={estilo}
 							onClick={handleClick}
-							className="btn btn-dark"
+							className="btn btn-secondary btnSombra"
 							to="confirmar-compra"
 						>
 							Finalizar compra
@@ -126,7 +132,7 @@ function Cart() {
 								handleClick();
 								confirmacion();
 							}}
-							className="btn btn-dark"
+							className="btn btn-secondary btnSombra"
 						>
 							Limpiar carrito
 						</button>

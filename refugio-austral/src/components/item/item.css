@@ -3,9 +3,11 @@
 	width: 250px;
 }
 .card {
+	background: none;
 	height: 100px;
 }
 .img-contenedor {
+	background: var(--color-in);
 	height: 50%;
 	width: 100%;
 	display: flex;
@@ -17,6 +19,7 @@
 	margin: 0 auto;
 }
 .card-body {
+	background: var(--color-in);
 	height: 25%;
 	width: 100%;
 	margin: 0 auto;
@@ -42,11 +45,13 @@
 	justify-content: center;
 }
 .divCompra {
+	background: var(--color-in);
 	height: 25%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-bottom: 5px;
 }
 .agregarAlCarrito {
 	height: 50%;

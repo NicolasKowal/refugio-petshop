@@ -78,7 +78,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 						{cantidad > 0 ? (
 							<button
 								style={estilo}
-								className="btn btn-dark"
+								className="btn btn-secondary btnSombra"
 								onClick={() => {
 									HandleClick(nombre, cantidad);
 								}}
@@ -86,7 +86,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 								{texto}
 							</button>
 						) : (
-							<button disabled className="btn btn-dark">
+							<button disabled className="btn btn-secondary btnSombra">
 								{texto}
 							</button>
 						)}

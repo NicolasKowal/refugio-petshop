@@ -7,6 +7,7 @@ function Contacto() {
 	window.scrollTo(0, 0);
 	return (
 		<div className="contacto">
+			<div className="imageContact"></div>
 			<br />
 			<h3 className="titulo">
 				Envianos un mensaje y nos pondremos en contacto con vos
@@ -62,10 +63,10 @@ function Contacto() {
 					></textarea>
 				</div>
 				<div className="d-flex justify-content-around align-items-center botonera">
-					<button className="btn btn-dark" type="submit">
+					<button className="btn btn-secondary btnSombra" type="submit">
 						Enviar
 					</button>
-					<button className="btn btn-dark" type="reset">
+					<button className="btn btn-secondary btnSombra" type="reset">
 						Resetear
 					</button>
 				</div>

@@ -79,7 +79,7 @@ function FinalizarCompra() {
 			</h3>
 			<div className="d-flex align-items-center justify-content-center ">
 				<Link
-					className="btn btn-dark btnFinalizar"
+					className="btn btn-secondary btnSombra btnFinalizar"
 					to={"/"}
 					onClick={handleClick}
 				>

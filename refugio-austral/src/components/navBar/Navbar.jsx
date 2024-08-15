@@ -48,7 +48,7 @@ function Navbar() {
 						ref={busqueda}
 					></input>
 					<Link to={`/busqueda/${valorBusqueda}`}>
-						<button>🔎</button>
+						<button className="btnSombra">🔎</button>
 					</Link>
 				</div>
 				<Cart />

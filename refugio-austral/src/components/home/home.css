@@ -48,8 +48,9 @@ main {
 	position: relative;
 	bottom: 50px;
 }
-.suscribe input {
+.suscribe div input {
 	width: 50%;
+	height: 40px;
 	margin-right: 10px;
 	border-radius: 10px;
 	padding-left: 10px;

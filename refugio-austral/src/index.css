@@ -6,6 +6,7 @@
 	--color-cuaternario: #4b8f8c;
 	--color-quinto: #c5979d;
 	--color-texto: #cdcdcd;
+	--color-in: #f2f2f2;
 }
 * {
 	margin: 0;
@@ -36,6 +37,9 @@
 .loadingStyle {
 	min-height: 100vh;
 }
+input {
+	background: var(--color-in);
+}
 
 @keyframes swipeLeft {
 	from {
@@ -47,7 +51,7 @@
 }
 
 .swipeLeft {
-	animation: swipeLeft 0.5s;
+	animation: swipeLeft 0.7s;
 }
 
 @keyframes shake {
@@ -87,4 +91,10 @@
 }
 .shake {
 	animation: shake 1s;
+}
+
+.btnSombra {
+	-webkit-box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.75);
+	box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.75);
 }

@@ -153,20 +153,25 @@ function ConfirmarCompra() {
 			</form>
 			<br />
 			<div className="d-flex justify-content-between mx-auto divBoton">
-				<Link to="/" className="btn btn-dark botonConformarCompra">
+				<Link
+					to="/"
+					className="btn btn-secondary btnSombra botonConformarCompra"
+				>
 					Volver
 				</Link>
 				{habilitarBoton == false ? (
 					<Link
 						type="submit"
 						onClick={cargarCompra}
-						className="btn btn-dark botonConformarCompra"
+						className="btn btn-secondary btnSombra botonConformarCompra"
 						to={`/compra-finalizada`}
 					>
 						Siguiente
 					</Link>
 				) : (
-					<button className="btn btn-secondary disabled">Siguiente</button> //el boton se va a habilitar si solo si estan todos los campos completos
+					<button className="btn btn-secondary btnSombra disabled">
+						Siguiente
+					</button> //el boton se va a habilitar si solo si estan todos los campos completos
 				)}
 			</div>
 			<br />

@@ -18,5 +18,5 @@
 .pie a:hover {
 	transform: rotateX(360deg);
 	transition: 1s ease-in-out;
-	scale: 1.3;
+	scale: 1.1;
 }

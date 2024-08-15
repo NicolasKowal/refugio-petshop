@@ -3,19 +3,32 @@
 	color: var(--color-texto);
 	min-height: 100vh;
 }
+.imageContact {
+	padding-top: 50px;
+	height: 600px;
+	width: 100%;
+	background: url("../../../public/cute-dogs-with-lights-couch.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: top;
+}
 .container-redes {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 150px;
+	width: 50%;
+	margin: 0 auto;
 	column-gap: 150px;
 }
 .container-redes img {
 	height: 150px;
+	transition: 0.5s ease-in-out;
 }
 .container-redes img:hover {
 	transform: scale(1.1);
-	transition: 0.5s ease-in;
+	transition: 0.5s ease-in-out;
 }
 .formulario {
 	margin: 0 auto;
@@ -61,4 +74,5 @@
 	height: 450px;
 	margin: 0 auto;
 	border: 1px solid black;
+	border-radius: 10px;
 }

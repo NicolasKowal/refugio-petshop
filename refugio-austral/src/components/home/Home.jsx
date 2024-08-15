@@ -106,8 +106,8 @@ function Home() {
 					</h3>
 				</div>
 				<div className="d-flex align-items-center justify-content-center">
-					<input type="text" className="text" />
-					<button type="submit" className="btn btn-dark">
+					<input type="text" placeholder="Escribi tu mail aca!" />
+					<button type="submit" className="btn btn-secondary btnSombra">
 						Suscribirse
 					</button>
 				</div>

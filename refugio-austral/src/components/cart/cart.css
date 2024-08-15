@@ -69,11 +69,11 @@ a {
 .listaS {
 	height: auto;
 	width: 100%;
-	padding: 0;
+	padding: 10px 0px 0px 0px;
 }
 .listaS li {
 	list-style: none;
-	height: 10%;
+	height: 50px;
 	width: 100%;
 	color: black;
 	display: flex;
