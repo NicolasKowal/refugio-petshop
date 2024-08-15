@@ -45,20 +45,22 @@
 		transform: translateX(0%);
 	}
 }
-.swipeLeft {
-	animation: swipeLeft 0.5s;
-}
-
 @keyframes swipeRight {
 	from {
-		transform: translateY(0%);
+		transform: translateX(0%);
 	}
 	to {
-		transform: translateY(100%);
+		transform: translateX(100%);
 	}
 }
+
 .swipeRight {
-	animation: swipeRight 0.5s;
+	display: flex;
+	animation: 10s swipeRight;
+}
+
+.swipeLeft {
+	animation: swipeLeft 0.5s;
 }
 
 @keyframes shake {

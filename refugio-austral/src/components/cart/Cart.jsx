@@ -78,7 +78,10 @@ function Cart() {
 				)}
 			</div>
 			<div style={estilo} className="sombra" onClick={handleClick}></div>
-			<div style={estilo} className={estilo ? "swipeLeft compra" : "compra"}>
+			<div
+				style={estilo}
+				className={estilo ? "swipeLeft compra" : "SwipeRight compra"}
+			>
 				<div className="closeBar">
 					<button className="btn btn-light" onClick={handleClick}>
 						X
