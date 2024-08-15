@@ -7,3 +7,5 @@ En la barra de navegación, se puede acceder a una solapa de **Contacto**, en la
 El proceso de compra consiste en llenar un carrito con la mercadería que se necesite, para luego pasar a la carga de datos del comprador y finalizar la compra, registrando la misma en la base de datos.
 
 Dentro de la estructura de la página, se puede observar que hay un contenedor de listas de ítems, y dentro de esta lista, los ítems correspondientes.
+
+Link a vercel https://refugio-petshop.vercel.app/
