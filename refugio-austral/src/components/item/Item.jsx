@@ -45,7 +45,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 				</Link>
 				<div className="card-body">
 					<h5>{nombre}</h5>
-					<p>${precio}</p>
+					<p>${precio.toLocaleString("es-ES")}</p>
 				</div>
 				<div className="divCompra">
 					<div className="selectorCantidad d-flex align-items-center justify-content-center">

@@ -96,14 +96,16 @@ function ConfirmarCompra() {
 						<div className="row">
 							<p className="col-1">{elemento.cantidad}</p>
 							<p className="col-9">{elemento.nombre}</p>
-							<p className="col-2">$ {elemento.total}</p>
+							<p className="col-2">
+								$ {elemento.total.toLocaleString("es-ES")}
+							</p>
 						</div>
 					</div>
 				))}
 			</div>
 			<div className="total d-flex justify-content-end align-items-center">
 				<h3 className="d-flex justify-content-end align-items-center justify-content-center">
-					Total: ${precioFinal}
+					Total: ${precioFinal.toLocaleString("es-ES")}
 				</h3>
 			</div>
 			<br />

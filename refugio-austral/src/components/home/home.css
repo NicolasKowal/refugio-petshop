@@ -19,9 +19,11 @@ main {
 	border-radius: 50%;
 	filter: opacity(100%);
 	transition: 0.3s ease;
+	filter: drop-shadow(15px 15px 10px var(--color-secundario));
 }
 .container-img img:hover {
 	scale: 1.1;
+	filter: none;
 }
 .productosMasVendidos {
 	width: 90%;

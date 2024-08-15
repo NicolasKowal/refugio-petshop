@@ -98,7 +98,7 @@ function Cart() {
 									{elemento.nombre}
 								</p>
 								<p className="col-3 d-flex align-items-center">
-									$ {elemento.total}
+									$ {elemento.total.toLocaleString("es-ES")}
 								</p>
 								<button
 									className="col-2 btn btn-secondary btnSombra d-flex align-items-center justify-content-center m-0"

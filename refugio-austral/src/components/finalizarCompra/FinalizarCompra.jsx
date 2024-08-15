@@ -45,11 +45,9 @@ function FinalizarCompra() {
 			<div className="datosUsuario container d-flex flex-column">
 				<div className="row">
 					<p className="col-6">Nombre</p>
-					<p className="col-6">{datos.comprador.nombre}</p>
-				</div>
-				<div className="row">
-					<p className="col-6">Apellido</p>
-					<p className="col-6">{datos.comprador.apellido}</p>
+					<p className="col-6">
+						{datos.comprador.nombre} {datos.comprador.apellido}
+					</p>
 				</div>
 				<div className="row">
 					<p className="col-6">Telefono</p>
@@ -67,7 +65,7 @@ function FinalizarCompra() {
 				{datos.carrito.map((item) => (
 					<div className="row" key={item.id}>
 						<p className="col-6">{item.nombre}</p>
-						<p className="col-6">${item.total}</p>
+						<p className="col-6">${item.total.toLocaleString("es-ES")}</p>
 					</div>
 				))}
 			</div>
@@ -75,7 +73,7 @@ function FinalizarCompra() {
 			<h2 className="titulo">Total</h2>
 			<br />
 			<h3 className="d-flex align-items-center justify-content-center">
-				$ {datos.total}
+				$ {datos.total.toLocaleString("es-ES")}
 			</h3>
 			<div className="d-flex align-items-center justify-content-center ">
 				<Link
