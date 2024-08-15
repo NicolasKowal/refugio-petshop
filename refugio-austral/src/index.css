@@ -45,19 +45,6 @@
 		transform: translateX(0%);
 	}
 }
-@keyframes swipeRight {
-	from {
-		transform: translateX(0%);
-	}
-	to {
-		transform: translateX(100%);
-	}
-}
-
-.swipeRight {
-	display: flex;
-	animation: 10s swipeRight;
-}
 
 .swipeLeft {
 	animation: swipeLeft 0.5s;

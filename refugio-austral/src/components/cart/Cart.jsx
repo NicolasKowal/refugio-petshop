@@ -15,8 +15,8 @@ const GuardarStorage = (array, nombre) => {
 };
 
 function Cart() {
-	const { carrito, setCarrito, shakeCarrito, setShakeCarrito } =
-		useContext(ShopList); //se importa el contexto
+	const { carrito, setCarrito } = useContext(ShopList); //se importa el contexto
+	const { shakeCarrito, setShakeCarrito } = useContext(ShopList); //se importa el contexto
 
 	useEffect(() => {
 		if (shakeCarrito) {
@@ -78,12 +78,9 @@ function Cart() {
 				)}
 			</div>
 			<div style={estilo} className="sombra" onClick={handleClick}></div>
-			<div
-				style={estilo}
-				className={estilo ? "swipeLeft compra" : "SwipeRight compra"}
-			>
+			<div style={estilo} className={estilo ? "swipeLeft compra" : "compra"}>
 				<div className="closeBar">
-					<button className="btn btn-light" onClick={handleClick}>
+					<button className="btn btn-dark" onClick={handleClick}>
 						X
 					</button>
 				</div>
