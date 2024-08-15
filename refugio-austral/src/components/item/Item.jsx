@@ -17,6 +17,7 @@ function Item({ id, nombre, precio, imagen, stock }) {
 
 	const HandleClick = (nombre, cantidad) => {
 		if (cantidad !== 0) {
+			setShakeCarrito(true);
 			setTexto("Agregado correctamente");
 			setEstilo({ background: "green" }); //cambia a verde el boton para que el usuario sepa que se agrego
 			let buscarEnArray = carrito.findIndex((x) => x.id === id);

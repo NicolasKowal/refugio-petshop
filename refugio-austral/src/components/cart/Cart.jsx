@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import { ImCart } from "react-icons/im";
 import { ShopList } from "../../context";
@@ -15,10 +15,22 @@ const GuardarStorage = (array, nombre) => {
 };
 
 function Cart() {
+	const { carrito, setCarrito, shakeCarrito, setShakeCarrito } =
+		useContext(ShopList); //se importa el contexto
+
+	useEffect(() => {
+		if (shakeCarrito) {
+			const timer = setTimeout(() => {
+				setShakeCarrito(false); // Remove the shake effect after 1 second
+			}, 1000);
+
+			return () => clearTimeout(timer); // Cleanup the timer on unmount
+		}
+	}, [shakeCarrito]);
+
 	const [xButton, setButton] = useState(false);
 	const [estilo, setEstilo] = useState({ display: "none" }); //se va a usar para setear el carrito, si se ve o no
-	const { carrito, setCarrito } = useContext(ShopList); //se importa el contexto
-	const { shakeCarrito, setShakeCarrito } = useContext(ShopList); //se importa el contexto
+
 	const confirmacion = () => {
 		//
 		Swal.fire({
@@ -54,7 +66,10 @@ function Cart() {
 	};
 	return (
 		<>
-			<div className="carro" onClick={handleClick}>
+			<div
+				className={shakeCarrito ? "shake carro" : "carro"}
+				onClick={handleClick}
+			>
 				<ImCart size="30px" />
 				{carrito.length != 0 ? (
 					<p style={compra}>{carrito.length}</p>
@@ -63,9 +78,9 @@ function Cart() {
 				)}
 			</div>
 			<div style={estilo} className="sombra" onClick={handleClick}></div>
-			<div style={estilo} className="compra">
+			<div style={estilo} className={estilo ? "swipeLeft compra" : "compra"}>
 				<div className="closeBar">
-					<button className="btn btn-dark" onClick={handleClick}>
+					<button className="btn btn-light" onClick={handleClick}>
 						X
 					</button>
 				</div>
